@@ -8,18 +8,42 @@
     <title>Convert backlog ticket</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>-->
 </head>
 
 <body>
 <div style="margin: 3% 10% 0 10%;">
-    <div class="input-group">
-        <div class="input-group-prepend">
-            <span class="input-group-text">Input background</span>
+    <div>
+        <h1>
+            <span>This tool was build with low cost. Please use it correctly :D</span>
+        </h1>
+        <div >
+            <h4>
+                <span >Should turn off this setting for faster download:</span>
+            </h4>
+            <a href="chrome://settings/downloads">chrome://settings/downloads</a>
+            <span> -> Ask where to save each file before downloading -> </span>
+            <span style="color: brown">turn off</span>
         </div>
+    </div>
+    <br>
+    <div class="select-group">
+        <div class="input-group-prepend">
+            <form>
+                <label for="products">Choose a product:</label>
+                <select id="products" name="products">
+                    <option value="alluring-beauty">Alluring Beauty</option>
+                    <option value="forever-love">Forever Love</option>
+                    <option value="love-knot">Love Knot</option>
+                    <option value="interlocking-hearts">Interlocking Hearts</option>
+                    <option value="eternal-hope">Eternal Hope</option>
+                </select>
+            </form>
+        </div>
+    </div>
+    <div class="input-group">
         <input type="text" id="background-src-url" class="form-control">
         <div class="input-group-append">
-            <button id="go" class="form-control" onclick="downloadImages()">Go</button>
+            <input type="submit" onclick="downloadImages()" value="Submit">
         </div>
     </div>
 </div>
@@ -30,6 +54,19 @@
         return url;
     }
 
+    function makeid(length) {
+        let result = '';
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        const charactersLength = characters.length;
+        let counter = 0;
+        while (counter < length) {
+            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+            counter += 1;
+        }
+        return result;
+    }
+
+
     async function downloadImage(imageSrc) {
         const image = await fetch(imageSrc)
         const imageBlog = await image.blob()
@@ -38,30 +75,70 @@
         const link = document.createElement('a')
         link.href = imageURL
         document.body.appendChild(link)
-        link.download = 'new-file'
+        link.download = makeid(8)
         link.click()
         document.body.removeChild(link)
     }
 
+    function getAlluringBeautyCodes() {
+        return [12053, 12199, 12198, 12194, 12191, 12218, 12722, 13901, 12058, 12239, 14852, 12220, 12228, 12219, 12034, 12127, 12113, 12112, 12606, 12627, 12626, 12725, 12037, 14857, 12117, 12607, 12630, 12768, 12413, 12412];
+    }
+
+    function getForeverLoveCodes() {
+        return [10609, 5126, 2277, 5123, 8853, 8848, 13972, 13977, 9203, 1725, 9202, 9236, 9230, 9235, 10610, 13442, 2286, 5144, 13443, 1728, 13984, 11301, 9217, 9212, 9214, 5546, 13449, 13451];
+    }
+
+    function getLoveKnotCodes() {
+        return [12044, 12136, 12142, 12135, 12129, 12131, 14166, 14173, 12061, 15021, 12672, 12169, 12167, 12164, 12018, 14188, 14192, 14189, 14191, 12390, 12388, 12291, 12024, 15015, 12030, 12381, 12664, 14196];
+    }
+
+    function getInterlockingHeartsCodes() {
+        return [12046, 12248, 12249, 12251, 12252, 12244, 14122, 14139, 12051, 15274, 14145, 12273, 12280, 14124, 12045, 12076, 12102, 12608, 14130, 12077, 12448, 12289, 12067, 12108, 12106, 12779, 14254];
+    }
+
+    function getEternalHopeCodes() {
+        return [11104, 8718, 8712, 13920, 10062, 14242, 8689, 12641, 11105, 8729, 8727, 15454, 13891, 13889];
+    }
+
     function downloadImages() {
         const backGroundSrcUrl = document.getElementById('background-src-url').value;
-        // https://cdn.wallpapersafari.com/66/58/7Hbmas.jpg
-        const completeLink = this.shineOnUrl(123);
+        let codes;
+        switch ($('#products').find(":selected").val()) {
+            case "alluring-beauty":
+                 codes = this.getAlluringBeautyCodes();
+                break;
+            case "forever-love":
+                codes = this.getForeverLoveCodes();
+                break;
+            case "love-knot":
+                codes = this.getLoveKnotCodes();
+                break;
+            case "interlocking-hearts":
+                codes = this.getInterlockingHeartsCodes();
+                break;
+            case "eternal-hope":
+                codes = this.getEternalHopeCodes();
+                break;
+            default:
+                codes = [];
+        }
 
-        console.log(completeLink);
-        $.ajax({
-            url: shineOnUrl(14198),
-            type: "POST",
-            headers: {"Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiYjdlMmU1NWU0M2I3Zjc5NjY4OWEyODIyNTYzYzA2OTU4ZWE3NjVlY2Y3YzJmM2FkOWZiZDE5YTcwZjZmNjJkYjU0ZjU3MTJiMGE3MTViZGMiLCJpYXQiOjE2NzgxMDc1NjgsIm5iZiI6MTY3ODEwNzU2OCwiZXhwIjoxNzA5NzI5OTY4LCJzdWIiOiIyMTExOTIiLCJzY29wZXMiOlsicmVhZF9zaG9wIiwicmVhZF9vcmRlcnMiLCJyZWFkX3Byb2R1Y3RfdGVtcGxhdGVzIiwicmVhZF90cmFuc2Zvcm1hdGlvbnMiLCJ3cml0ZV9hcnR3b3JrIiwid3JpdGVfc2t1cyIsIndyaXRlX29yZGVycyJdfQ.uS-SILQAuTw5xkWYZMJCmpH0MBpC6_4hrEwQhkoRQs9vp6co9J2kCKZySQb5WQI6aCPKVF4WOrNQMd_FxRV1ge_mmdCFSAVV2BTvI-TSoHBkC4FZcv_yji-AUFEGQuvTMkGt073z73K8yczqSblCdfdldAWrpsQgvlkxo-sOIBsDFTZ4sZ_txF5jDQCYIcTN7Vs7YfVqBCiw86-TT-o_W0Rn5E24jk1KXU92hvIqFgB7asz6d3omrPCsv-zk2cFF-xlEvcLvAqfdNua2ammnrVZALVLW1Oo9OEku9LSXP0Ik_wmWKqfrNR5Bw5_YvrUp3L-rL1r85SXLL5BMJHkIxJzKe4Ue1N2bM58qVfR_4Em-YhNfsK_wpA51l3LXZBheVCoid-pGR1J_JWzENusmIJG4opcL9pKfmFyeJyk3iA1Z0XGDHZ0y3FnFjTPstJEpFFcYem8zQ1BS5lgXFfJu66dw1MA55KpiYpJZB-n_koA6Faa-suyCUwM1XRwA2zKE7aleoQMna5ToxVrhEiBCoF3ioULBEA1Ok2k1dJrc58gyGd8E1gJRuvdW10vXe2cnutCutAVWNA391szNyxxJg_KQ8jD-UuCt7RSZSB8pnKYVHq2T_9qRrXBLmmhCcoeG1KH4Aavi_vw6g7m7EYDdI5j6RktehihBTEJcMHPy13Y"},
-            data: {
-                "src" : backGroundSrcUrl,
-            },
-            success: function (response) {
-                const responseUrl = response.render.make.src;
-                // window.location = shineOnUrl(14198);
-                downloadImage(responseUrl)
-            },
-        })
+        let downloaded = 0;
+        for (let i = 0; i < codes.length; i++) {
+            $.ajax({
+                url: shineOnUrl(codes[i]),
+                type: "POST",
+                headers: {"Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiYjdlMmU1NWU0M2I3Zjc5NjY4OWEyODIyNTYzYzA2OTU4ZWE3NjVlY2Y3YzJmM2FkOWZiZDE5YTcwZjZmNjJkYjU0ZjU3MTJiMGE3MTViZGMiLCJpYXQiOjE2NzgxMDc1NjgsIm5iZiI6MTY3ODEwNzU2OCwiZXhwIjoxNzA5NzI5OTY4LCJzdWIiOiIyMTExOTIiLCJzY29wZXMiOlsicmVhZF9zaG9wIiwicmVhZF9vcmRlcnMiLCJyZWFkX3Byb2R1Y3RfdGVtcGxhdGVzIiwicmVhZF90cmFuc2Zvcm1hdGlvbnMiLCJ3cml0ZV9hcnR3b3JrIiwid3JpdGVfc2t1cyIsIndyaXRlX29yZGVycyJdfQ.uS-SILQAuTw5xkWYZMJCmpH0MBpC6_4hrEwQhkoRQs9vp6co9J2kCKZySQb5WQI6aCPKVF4WOrNQMd_FxRV1ge_mmdCFSAVV2BTvI-TSoHBkC4FZcv_yji-AUFEGQuvTMkGt073z73K8yczqSblCdfdldAWrpsQgvlkxo-sOIBsDFTZ4sZ_txF5jDQCYIcTN7Vs7YfVqBCiw86-TT-o_W0Rn5E24jk1KXU92hvIqFgB7asz6d3omrPCsv-zk2cFF-xlEvcLvAqfdNua2ammnrVZALVLW1Oo9OEku9LSXP0Ik_wmWKqfrNR5Bw5_YvrUp3L-rL1r85SXLL5BMJHkIxJzKe4Ue1N2bM58qVfR_4Em-YhNfsK_wpA51l3LXZBheVCoid-pGR1J_JWzENusmIJG4opcL9pKfmFyeJyk3iA1Z0XGDHZ0y3FnFjTPstJEpFFcYem8zQ1BS5lgXFfJu66dw1MA55KpiYpJZB-n_koA6Faa-suyCUwM1XRwA2zKE7aleoQMna5ToxVrhEiBCoF3ioULBEA1Ok2k1dJrc58gyGd8E1gJRuvdW10vXe2cnutCutAVWNA391szNyxxJg_KQ8jD-UuCt7RSZSB8pnKYVHq2T_9qRrXBLmmhCcoeG1KH4Aavi_vw6g7m7EYDdI5j6RktehihBTEJcMHPy13Y"},
+                data: {
+                    "src" : backGroundSrcUrl,
+                },
+                success: async function (response) {
+                    const responseUrl = response.render.make.src;
+                     await downloadImage(responseUrl)
+                    downloaded++;
+                },
+            })
+        }
     }
 </script>
 </body>
