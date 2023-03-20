@@ -28,9 +28,6 @@
     <br>
     <div class="container">
         <div class="row">
-<!--            <div class="col-2" style="text-align: justify">-->
-<!--                <h5>Choose a product:</h5>-->
-<!--            </div>-->
             <div class="col-3">
                 <span>Product</span>
                 <div class="input-group-prepend">
@@ -40,7 +37,10 @@
                             <option value="forever-love">Forever Love</option>
                             <option value="love-knot">Love Knot</option>
                             <option value="interlocking-hearts">Interlocking Hearts</option>
+                            <option value="cuban">Cuban</option>
                             <option value="eternal-hope">Eternal Hope</option>
+                            <option value="cross">Cross</option>
+                            <option value="customize-name">Customize name</option>
                         </select>
                     </form>
                 </div>
@@ -54,6 +54,7 @@
                             <option value="14L">14L</option>
                             <option value="18S">18S</option>
                             <option value="18L">18L</option>
+                            <option value="custom">Custom</option>
                         </select>
                     </form>
                 </div>
@@ -145,6 +146,31 @@
         return value ;
     }
 
+    function getCubanCodes(key) {
+        const codes = new Map();
+        codes.set('14S', [11570, 11571, 11573, 11586, 13304, 11510, 11488, 11501, 11585]);
+        codes.set('14L', [11570, 11494, 11500, 11495, 13644, 13305, 11510, 11488, 11501]);
+        codes.set('18S', [11645, 11493, 11648, 11650, 11657, 11647, 11479, 11483, 11461]);
+        codes.set('18L', [11645, 11493, 11485, 11475, 11473, 11473, 11483, 11461, 11486]);
+        const value = codes.get(key);
+        return value ;
+    }
+
+    function getCrossCodes(key) {
+        const codes = new Map();
+        codes.set('14S', [3421, 8679, 2651, 2648, 2650, 2640, 2644, 2646, 14717]);
+        codes.set('14L', [3421, 8679, 2974, 2975, 2978, 9541, 2646, 14717, 14716]);
+        const value = codes.get(key);
+        return value ;
+    }
+
+    function getCustomizeNameCodes(key) {
+        const codes = new Map();
+        codes.set('custom', [14205, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/customize-position2.jpg', 14695, 14694, 16106, 16087, 16147, 16082, 14601]);
+        const value = codes.get(key);
+        return value ;
+    }
+
     function getEternalHopeCodes(key) {
         const codes = new Map();
         codes.set('14S', [11104, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/9.png', 8712, 8718, 12636, 10062, 13918, 12635, 12641]);
@@ -168,6 +194,7 @@
         const backGroundSrcUrl = document.getElementById('background-src-url').value;
         let codes;
         const type = $('#types').find(":selected").val();
+        let withReplacePosition2 = true;
         switch ($('#products').find(":selected").val()) {
             case "alluring-beauty":
                  codes = this.getAlluringBeautyCodes(type);
@@ -181,8 +208,19 @@
             case "interlocking-hearts":
                 codes = this.getInterlockingHeartsCodes(type);
                 break;
+            case "cuban":
+                codes = this.getCubanCodes(type);
+                withReplacePosition2 = false;
+                break;
             case "eternal-hope":
                 codes = this.getEternalHopeCodes(type);
+                break;
+            case "cross":
+                codes = this.getCrossCodes(type);
+                withReplacePosition2 = false;
+                break;
+            case "customize-name":
+                codes = this.getCustomizeNameCodes(type);
                 break;
             default:
                 codes = [];
@@ -191,7 +229,7 @@
         let index;
         for (let i = 0; i < codes.length; i++) {
           let url = shineOnUrl(codes[i]);
-            if (i === 1) {
+            if (i === 1 && withReplacePosition2) {
                 downloadImage(2, codes[1])
                 continue;
             }
