@@ -46,15 +46,12 @@
                 </div>
             </div>
             <div class="col-3">
-                <span>Type</span>
+                <span>Step</span>
                 <div class="input-group-prepend">
                     <form>
                         <select id="types" name="types" class="form-select" aria-label="Default select example">
-                            <option value="14S">14S</option>
-                            <option value="14L">14L</option>
-                            <option value="18S">18S</option>
-                            <option value="18L">18L</option>
-                            <option value="custom">Custom</option>
+                            <option value="create-product">Create product</option>
+                            <option value="update-variation">Update variation</option>
                         </select>
                     </form>
                 </div>
@@ -64,7 +61,6 @@
                 <div class="input-group">
                     <input type="text" id="background-src-url" class="form-control">
                     <div class="input-group-append">
-<!--                        <input type="submit" onclick="downloadImages()" value="Submit">-->
                         <button type="submit" class="btn btn-primary" onclick="downloadImages()">Submit</button>
                     </div>
                 </div>
@@ -93,7 +89,7 @@
     }
 
 
-    async function downloadImage(index ,imageSrc) {
+    async function downloadImage(index ,imageSrc, productType) {
         const image = await fetch(imageSrc)
         const imageBlog = await image.blob()
         const imageURL = URL.createObjectURL(imageBlog)
@@ -101,7 +97,7 @@
         const link = document.createElement('a')
         link.href = imageURL
         document.body.appendChild(link)
-        link.download = index + '-' + makeid(8)
+        link.download = productType + '-' + index + '-' + makeid(8)
         link.click()
         document.body.removeChild(link)
     }
@@ -112,8 +108,7 @@
         codes.set('14L', [12053, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/2.png', 12239, 12220, 12228, 12219, 12231, 12722, 13900]);
         codes.set('18S', [12034, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/1.png', 12113, 12606, 12626, 12627, 12127, 12413, 12412]);
         codes.set('18L', [12034, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/1.png', 12122, 12121, 12630, 12628, 12127, 12413, 12412]);
-        const value = codes.get(key);
-        return value ;
+        return codes.get(key) ;
     }
 
     function getForeverLoveCodes(key) {
@@ -122,8 +117,7 @@
         codes.set('14L', [10609, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/4.png', 1725, 5545, 9202, 9233, 9230, 13453, 9203]);
         codes.set('18S', [10610, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/3.png', 13442, 13439, 9370, 9366, 1729, 13984, 13980]);
         codes.set('18L', [10610, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/3.png', 9212, 13449, 13447, 5621, 13451, 13984, 13980]);
-        const value = codes.get(key);
-        return value ;
+        return codes.get(key) ;
     }
 
     function getLoveKnotCodes(key) {
@@ -132,8 +126,7 @@
         codes.set('14L', [12044, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/6.png', 12169, 12671, 12146, 12176, 12166, 14170, 12151]);
         codes.set('18S', [12018, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/5.png', 12019, 14185, 12388, 12675, 12744, 14188, 12291]);
         codes.set('18L', [12018, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/5.png', 12386, 12610, 12388, 12032, 12746, 14188, 12291]);
-        const value = codes.get(key);
-        return value ;
+        return codes.get(key) ;
     }
 
     function getInterlockingHeartsCodes(key) {
@@ -142,8 +135,7 @@
         codes.set('14L', [12046, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/8.png', 12274, 12273, 12261, 12287, 12280, 14140, 12051]);
         codes.set('18S', [12045, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/7.png', 12099, 14149, 12077, 12774, 12775, 12076, 12448]);
         codes.set('18L', [12045, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/7.png', 12106, 14204, 12077, 12108, 12777, 12076, 12448]);
-        const value = codes.get(key);
-        return value ;
+        return codes.get(key) ;
     }
 
     function getCubanCodes(key) {
@@ -152,35 +144,31 @@
         codes.set('14L', [11570, 11494, 11500, 11495, 13644, 13305, 11510, 11488, 11501]);
         codes.set('18S', [11645, 11493, 11648, 11650, 11657, 11647, 11479, 11483, 11461]);
         codes.set('18L', [11645, 11493, 11485, 11475, 11473, 11473, 11483, 11461, 11486]);
-        const value = codes.get(key);
-        return value ;
+        return codes.get(key) ;
     }
 
     function getCrossCodes(key) {
         const codes = new Map();
         codes.set('14S', [3421, 8679, 2651, 2648, 2650, 2640, 2644, 2646, 14717]);
         codes.set('14L', [3421, 8679, 2974, 2975, 2978, 9541, 2646, 14717, 14716]);
-        const value = codes.get(key);
-        return value ;
+        return codes.get(key) ;
     }
 
     function getCustomizeNameCodes(key) {
         const codes = new Map();
-        codes.set('custom', [14205, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/customize-position2.jpg', 14695, 14694, 16106, 16087, 16147, 16082, 14601]);
-        const value = codes.get(key);
-        return value ;
+        codes.set('14S', [14205, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/customize-position2.jpg', 14695, 14694, 16106, 16087, 16147, 16082, 14601]);
+        return codes.get(key) ;
     }
 
     function getEternalHopeCodes(key) {
         const codes = new Map();
         codes.set('14S', [11104, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/9.png', 8712, 8718, 12636, 10062, 13918, 12635, 12641]);
         codes.set('14L', [11104, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/9.png', 8729, 8727, 12636, 8730, 10065, 12635, 12641]);
-        const value = codes.get(key);
-        return value ;     }
+        return codes.get(key) ;     }
 
     function tempAlert(msg,duration)
     {
-        var el = document.createElement("div");
+        const el = document.createElement("div");
         el.setAttribute("style","background-color:gray;");
         el.innerHTML = msg;
         setTimeout(function(){
@@ -192,60 +180,68 @@
     function downloadImages() {
         tempAlert('Please wait!', 3000);
         const backGroundSrcUrl = document.getElementById('background-src-url').value;
-        let codes;
+        let listTypeOfProduct = ['14S'];
         const type = $('#types').find(":selected").val();
-        let withReplacePosition2 = true;
-        switch ($('#products').find(":selected").val()) {
-            case "alluring-beauty":
-                 codes = this.getAlluringBeautyCodes(type);
-                break;
-            case "forever-love":
-                codes = this.getForeverLoveCodes(type);
-                break;
-            case "love-knot":
-                codes = this.getLoveKnotCodes(type);
-                break;
-            case "interlocking-hearts":
-                codes = this.getInterlockingHeartsCodes(type);
-                break;
-            case "cuban":
-                codes = this.getCubanCodes(type);
-                withReplacePosition2 = false;
-                break;
-            case "eternal-hope":
-                codes = this.getEternalHopeCodes(type);
-                break;
-            case "cross":
-                codes = this.getCrossCodes(type);
-                withReplacePosition2 = false;
-                break;
-            case "customize-name":
-                codes = this.getCustomizeNameCodes(type);
-                break;
-            default:
-                codes = [];
+
+        if (type === 'update-variation') {
+            listTypeOfProduct = ['14S','14L','18S','18L'];
         }
 
-        let index;
-        for (let i = 0; i < codes.length; i++) {
-          let url = shineOnUrl(codes[i]);
-            if (i === 1 && withReplacePosition2) {
-                downloadImage(2, codes[1])
-                continue;
+        for (let j = 0; j < listTypeOfProduct.length; j++) {
+            let codes;
+            const productType = listTypeOfProduct[j];
+
+            let withReplacePosition2 = true;
+            switch ($('#products').find(":selected").val()) {
+                case "alluring-beauty":
+                    codes = this.getAlluringBeautyCodes(productType);
+                    break;
+                case "forever-love":
+                    codes = this.getForeverLoveCodes(productType);
+                    break;
+                case "love-knot":
+                    codes = this.getLoveKnotCodes(productType);
+                    break;
+                case "interlocking-hearts":
+                    codes = this.getInterlockingHeartsCodes(productType);
+                    break;
+                case "cuban":
+                    codes = this.getCubanCodes(productType);
+                    withReplacePosition2 = false;
+                    break;
+                case "eternal-hope":
+                    codes = this.getEternalHopeCodes(productType);
+                    break;
+                case "cross":
+                    codes = this.getCrossCodes(productType);
+                    withReplacePosition2 = false;
+                    break;
+                case "customize-name":
+                    codes = this.getCustomizeNameCodes(productType);
+                    break;
+                default:
+                    codes = [];
             }
-            $.ajax({
-                url: url,
-                type: "POST",
-                headers: {"Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiYjdlMmU1NWU0M2I3Zjc5NjY4OWEyODIyNTYzYzA2OTU4ZWE3NjVlY2Y3YzJmM2FkOWZiZDE5YTcwZjZmNjJkYjU0ZjU3MTJiMGE3MTViZGMiLCJpYXQiOjE2NzgxMDc1NjgsIm5iZiI6MTY3ODEwNzU2OCwiZXhwIjoxNzA5NzI5OTY4LCJzdWIiOiIyMTExOTIiLCJzY29wZXMiOlsicmVhZF9zaG9wIiwicmVhZF9vcmRlcnMiLCJyZWFkX3Byb2R1Y3RfdGVtcGxhdGVzIiwicmVhZF90cmFuc2Zvcm1hdGlvbnMiLCJ3cml0ZV9hcnR3b3JrIiwid3JpdGVfc2t1cyIsIndyaXRlX29yZGVycyJdfQ.uS-SILQAuTw5xkWYZMJCmpH0MBpC6_4hrEwQhkoRQs9vp6co9J2kCKZySQb5WQI6aCPKVF4WOrNQMd_FxRV1ge_mmdCFSAVV2BTvI-TSoHBkC4FZcv_yji-AUFEGQuvTMkGt073z73K8yczqSblCdfdldAWrpsQgvlkxo-sOIBsDFTZ4sZ_txF5jDQCYIcTN7Vs7YfVqBCiw86-TT-o_W0Rn5E24jk1KXU92hvIqFgB7asz6d3omrPCsv-zk2cFF-xlEvcLvAqfdNua2ammnrVZALVLW1Oo9OEku9LSXP0Ik_wmWKqfrNR5Bw5_YvrUp3L-rL1r85SXLL5BMJHkIxJzKe4Ue1N2bM58qVfR_4Em-YhNfsK_wpA51l3LXZBheVCoid-pGR1J_JWzENusmIJG4opcL9pKfmFyeJyk3iA1Z0XGDHZ0y3FnFjTPstJEpFFcYem8zQ1BS5lgXFfJu66dw1MA55KpiYpJZB-n_koA6Faa-suyCUwM1XRwA2zKE7aleoQMna5ToxVrhEiBCoF3ioULBEA1Ok2k1dJrc58gyGd8E1gJRuvdW10vXe2cnutCutAVWNA391szNyxxJg_KQ8jD-UuCt7RSZSB8pnKYVHq2T_9qRrXBLmmhCcoeG1KH4Aavi_vw6g7m7EYDdI5j6RktehihBTEJcMHPy13Y"},
-                data: {
-                    "src" : backGroundSrcUrl,
-                },
-                success: async function (response) {
-                    const responseUrl = response.render.make.src;
-                    index = i + 1;
-                     await downloadImage(index, responseUrl)
-                },
-            });
+
+            for (let i = 0; i < codes.length; i++) {
+                let url = shineOnUrl(codes[i]);
+                if (i === 1 && withReplacePosition2) {
+                    downloadImage(2, codes[1], productType)
+                    continue;
+                }
+                $.ajax({
+                    url: url,
+                    type: "POST",
+                    headers: {"Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiYjdlMmU1NWU0M2I3Zjc5NjY4OWEyODIyNTYzYzA2OTU4ZWE3NjVlY2Y3YzJmM2FkOWZiZDE5YTcwZjZmNjJkYjU0ZjU3MTJiMGE3MTViZGMiLCJpYXQiOjE2NzgxMDc1NjgsIm5iZiI6MTY3ODEwNzU2OCwiZXhwIjoxNzA5NzI5OTY4LCJzdWIiOiIyMTExOTIiLCJzY29wZXMiOlsicmVhZF9zaG9wIiwicmVhZF9vcmRlcnMiLCJyZWFkX3Byb2R1Y3RfdGVtcGxhdGVzIiwicmVhZF90cmFuc2Zvcm1hdGlvbnMiLCJ3cml0ZV9hcnR3b3JrIiwid3JpdGVfc2t1cyIsIndyaXRlX29yZGVycyJdfQ.uS-SILQAuTw5xkWYZMJCmpH0MBpC6_4hrEwQhkoRQs9vp6co9J2kCKZySQb5WQI6aCPKVF4WOrNQMd_FxRV1ge_mmdCFSAVV2BTvI-TSoHBkC4FZcv_yji-AUFEGQuvTMkGt073z73K8yczqSblCdfdldAWrpsQgvlkxo-sOIBsDFTZ4sZ_txF5jDQCYIcTN7Vs7YfVqBCiw86-TT-o_W0Rn5E24jk1KXU92hvIqFgB7asz6d3omrPCsv-zk2cFF-xlEvcLvAqfdNua2ammnrVZALVLW1Oo9OEku9LSXP0Ik_wmWKqfrNR5Bw5_YvrUp3L-rL1r85SXLL5BMJHkIxJzKe4Ue1N2bM58qVfR_4Em-YhNfsK_wpA51l3LXZBheVCoid-pGR1J_JWzENusmIJG4opcL9pKfmFyeJyk3iA1Z0XGDHZ0y3FnFjTPstJEpFFcYem8zQ1BS5lgXFfJu66dw1MA55KpiYpJZB-n_koA6Faa-suyCUwM1XRwA2zKE7aleoQMna5ToxVrhEiBCoF3ioULBEA1Ok2k1dJrc58gyGd8E1gJRuvdW10vXe2cnutCutAVWNA391szNyxxJg_KQ8jD-UuCt7RSZSB8pnKYVHq2T_9qRrXBLmmhCcoeG1KH4Aavi_vw6g7m7EYDdI5j6RktehihBTEJcMHPy13Y"},
+                    data: {
+                        "src" : backGroundSrcUrl,
+                    },
+                    success: async function (response) {
+                        const responseUrl = response.render.make.src;
+                        await downloadImage(i + 1, responseUrl, productType);
+                    },
+                });
+            }
         }
     }
 </script>
