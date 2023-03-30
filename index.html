@@ -67,7 +67,47 @@
             </div>
         </div>
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+                <span>New Product</span>
+                <div class="input-group-prepend">
+                    <form>
+                        <select id="products-2" name="products" class="form-select" aria-label="Default select example">
+                            <option value="1">1. Vertical Name Necklace</option>
+                            <option value="2">2. Faith Cross Necklace</option>
+                            <option value="3">3. Signature Style Custom</option>
+                            <option value="4">4. Custom name Necklace</option>
+                            <option value="5">5. Love Knot</option>
+                            <option value="6">6. Interlocking Hearts</option>
+                            <option value="7">7. Forever Love</option>
+                            <option value="8">8. Alluring Beauty</option>
+                            <option value="9">9. Perfect Pair Necklace</option>
+                        </select>
+                    </form>
+                </div>
+            </div>
+            <div class="col-6">
+                <span>Link</span>
+                <div class="input-group">
+                    <input type="text" id="background-src-url-2" class="form-control">
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-primary" onclick="downloadImages2()">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+<br>
 <script src="jquery-3.6.4.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script>
@@ -108,7 +148,7 @@
         codes.set('14L', [12053, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/2.png', 12239, 12220, 12228, 12219, 12231, 12722, 13900]);
         codes.set('18S', [12034, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/1.png', 12113, 12606, 12626, 12627, 12127, 12413, 12412]);
         codes.set('18L', [12034, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/1.png', 12122, 12121, 12630, 12628, 12127, 12413, 12412]);
-        return codes.get(key) ;
+        return codes.get(key);
     }
 
     function getForeverLoveCodes(key) {
@@ -117,7 +157,7 @@
         codes.set('14L', [10609, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/4.png', 1725, 5545, 9202, 9233, 9230, 13453, 9203]);
         codes.set('18S', [10610, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/3.png', 13442, 13439, 9370, 9366, 1729, 13984, 13980]);
         codes.set('18L', [10610, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/3.png', 9212, 13449, 13447, 5621, 13451, 13984, 13980]);
-        return codes.get(key) ;
+        return codes.get(key);
     }
 
     function getLoveKnotCodes(key) {
@@ -135,7 +175,7 @@
         codes.set('14L', [12046, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/8.png', 12274, 12273, 12261, 12287, 12280, 14140, 12051]);
         codes.set('18S', [12045, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/7.png', 12099, 14149, 12077, 12774, 12775, 12076, 12448]);
         codes.set('18L', [12045, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/7.png', 12106, 14204, 12077, 12108, 12777, 12076, 12448]);
-        return codes.get(key) ;
+        return codes.get(key);
     }
 
     function getCubanCodes(key) {
@@ -151,25 +191,95 @@
         const codes = new Map();
         codes.set('14S', [3421, 8679, 2651, 2648, 2650, 2640, 2644, 2646, 14717]);
         codes.set('14L', [3421, 8679, 2974, 2975, 2978, 9541, 2646, 14717, 14716]);
-        return codes.get(key) ;
+        return codes.get(key);
     }
 
     function getCustomizeNameCodes(key) {
         const codes = new Map();
         codes.set('14S', [14205, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/customize-position2.jpg', 14695, 14694, 16106, 16087, 16147, 16082, 14601]);
-        return codes.get(key) ;
+        return codes.get(key);
     }
 
     function getEternalHopeCodes(key) {
         const codes = new Map();
         codes.set('14S', [11104, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/9.png', 8712, 8718, 12636, 10062, 13918, 12635, 12641]);
         codes.set('14L', [11104, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/9.png', 8729, 8727, 12636, 8730, 10065, 12635, 12641]);
-        return codes.get(key) ;     }
+        return codes.get(key);
+    }
+
+    function get1VerticalNameNecklace(key) {
+        const codes = new Map();
+        codes.set('sliver', [16036, 16056, 16038, 16054, 16039, 16087, 16055]);
+        codes.set('gold', [16042, 16084, 16044, 16052, 16045, 16046, 16053]);
+        return codes.get(key);
+    }
+
+    function get2FaithCrossNecklace(key) {
+        const codes = new Map();
+        codes.set('sliver', [11350, 12569, 12572, 11346, 11354, 11357, 11355]);
+        return codes.get(key);
+    }
+
+    function get3SignatureStyleCustom(key) {
+        const codes = new Map();
+        codes.set('sliver', [15767, 15559, 16105, 16034, 15560, 16106, 15572]);
+        codes.set('gold', [15943, 15561, 15942, 16035, 15562, 15571, 15570]);
+        return codes.get(key);
+    }
+
+    function get4CustomNameNecklace(key) {
+        const codes = new Map();
+        codes.set('sliver', [15384, 15387, 15406, 15338, 15451, 15453, 15452]);
+        codes.set('gold', [15371, 15374, 15382, 15439, 15372, 15379, 15380]);
+        return codes.get(key);
+    }
+
+    function get5LoveKnot(key) {
+        const codes = new Map();
+        codes.set('sliver-standard-box', [12044, 12132, 12133, 12146, 12142, 12149, 12157, 12662]);
+        codes.set('sliver-wooden-box', [12044, 12137, 14156, 12171, 12176, 12672, 12670, 14182]);
+        codes.set('gold-standard-box', [12018, 12292, 14186, 14190, 12744, 12743, 12675]);
+        codes.set('gold-wooden-box', [12018, 12291, 14187, 12610, 12386, 12385, 12032]);
+        return codes.get(key);
+    }
+
+    function get6InterlockingHearts(key) {
+        const codes = new Map();
+        codes.set('sliver-standard-box', [12046, 12259, 12250, 14121, 12050, 12249, 12251, 12265]);
+        codes.set('sliver-wooden-box', [12046, 12258, 14122, 12277, 12287, 12288, 14127]);
+        codes.set('gold-standard-box', [12045, 12447, 12077, 12608, 12774, 12774, 12776]);
+        codes.set('gold-wooden-box', [12045, 12289, 12076, 12106, 12109, 12108, 14132]);
+        return codes.get(key);
+    }
+
+    function get7ForeverLove(key) {
+        const codes = new Map();
+        codes.set('sliver-standard-box', [10609, 1721, 1726, 13970, 13985, 2270, 2277, 5127]);
+        codes.set('sliver-wooden-box', [10609, 11285, 13971, 1719, 1725, 9201, 9232]);
+        codes.set('gold-standard-box', [10610, 1733, 13978, 2279, 2286, 5133, 5141]);
+        codes.set('gold-wooden-box', [10610, 11300, 13978, 5621, 5546, 9214, 13449]);
+        return codes.get(key);
+    }
+
+    function get8AlluringBeauty(key) {
+        const codes = new Map();
+        codes.set('sliver-standard-box', [12053, 12212, 12195, 12718, 12057, 12197, 12198, 12207]);
+        codes.set('sliver-wooden-box', [12053, 12043, 12719, 12220, 12230, 12237, 12239]);
+        codes.set('gold-standard-box', [12034, 12412, 12723, 12113, 12606, 12626, 12758]);
+        codes.set('gold-wooden-box', [12034, 12128, 12725, 12116, 12120, 12630, 12122]);
+        return codes.get(key);
+    }
+
+    function get9PerfectPairNecklace(key) {
+        const codes = new Map();
+        codes.set('standard-box', [11111, 11186, 11196, 11194, 11194, 15504, 15494, 15506, 15509, 15515, 15511, 11261]);
+        return codes.get(key);
+    }
 
     function tempAlert(msg,duration)
     {
-        const el = document.createElement("div");
-        el.setAttribute("style","background-color:gray;");
+        const el = document.createElement("h3");
+        el.setAttribute("style","background-color:gray;text-align:center;");
         el.innerHTML = msg;
         setTimeout(function(){
             el.parentNode.removeChild(el);
@@ -180,6 +290,9 @@
     function downloadImages() {
         tempAlert('Please wait!', 3000);
         const backGroundSrcUrl = document.getElementById('background-src-url').value;
+        if (backGroundSrcUrl === '') {
+            return;
+        }
         let listTypeOfProduct = ['14S'];
         const type = $('#types').find(":selected").val();
 
@@ -223,12 +336,85 @@
                     codes = [];
             }
 
+            if (codes === undefined) {
+                continue;
+            }
+
             for (let i = 0; i < codes.length; i++) {
                 let url = shineOnUrl(codes[i]);
                 if (i === 1 && withReplacePosition2) {
                     downloadImage(2, codes[1], productType)
                     continue;
                 }
+                $.ajax({
+                    url: url,
+                    type: "POST",
+                    headers: {"Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiYjdlMmU1NWU0M2I3Zjc5NjY4OWEyODIyNTYzYzA2OTU4ZWE3NjVlY2Y3YzJmM2FkOWZiZDE5YTcwZjZmNjJkYjU0ZjU3MTJiMGE3MTViZGMiLCJpYXQiOjE2NzgxMDc1NjgsIm5iZiI6MTY3ODEwNzU2OCwiZXhwIjoxNzA5NzI5OTY4LCJzdWIiOiIyMTExOTIiLCJzY29wZXMiOlsicmVhZF9zaG9wIiwicmVhZF9vcmRlcnMiLCJyZWFkX3Byb2R1Y3RfdGVtcGxhdGVzIiwicmVhZF90cmFuc2Zvcm1hdGlvbnMiLCJ3cml0ZV9hcnR3b3JrIiwid3JpdGVfc2t1cyIsIndyaXRlX29yZGVycyJdfQ.uS-SILQAuTw5xkWYZMJCmpH0MBpC6_4hrEwQhkoRQs9vp6co9J2kCKZySQb5WQI6aCPKVF4WOrNQMd_FxRV1ge_mmdCFSAVV2BTvI-TSoHBkC4FZcv_yji-AUFEGQuvTMkGt073z73K8yczqSblCdfdldAWrpsQgvlkxo-sOIBsDFTZ4sZ_txF5jDQCYIcTN7Vs7YfVqBCiw86-TT-o_W0Rn5E24jk1KXU92hvIqFgB7asz6d3omrPCsv-zk2cFF-xlEvcLvAqfdNua2ammnrVZALVLW1Oo9OEku9LSXP0Ik_wmWKqfrNR5Bw5_YvrUp3L-rL1r85SXLL5BMJHkIxJzKe4Ue1N2bM58qVfR_4Em-YhNfsK_wpA51l3LXZBheVCoid-pGR1J_JWzENusmIJG4opcL9pKfmFyeJyk3iA1Z0XGDHZ0y3FnFjTPstJEpFFcYem8zQ1BS5lgXFfJu66dw1MA55KpiYpJZB-n_koA6Faa-suyCUwM1XRwA2zKE7aleoQMna5ToxVrhEiBCoF3ioULBEA1Ok2k1dJrc58gyGd8E1gJRuvdW10vXe2cnutCutAVWNA391szNyxxJg_KQ8jD-UuCt7RSZSB8pnKYVHq2T_9qRrXBLmmhCcoeG1KH4Aavi_vw6g7m7EYDdI5j6RktehihBTEJcMHPy13Y"},
+                    data: {
+                        "src" : backGroundSrcUrl,
+                    },
+                    success: async function (response) {
+                        const responseUrl = response.render.make.src;
+                        await downloadImage(i + 1, responseUrl, productType);
+                    },
+                });
+            }
+        }
+    }
+
+
+    function downloadImages2() {
+        tempAlert('Please wait!', 3000);
+        const backGroundSrcUrl = document.getElementById('background-src-url-2').value;
+        if (backGroundSrcUrl === '') {
+            return;
+        }
+        const listTypeOfProduct = ['sliver','gold','sliver-standard-box','sliver-wooden-box','gold-standard-box','gold-wooden-box', 'standard-box'];
+
+        for (let j = 0; j < listTypeOfProduct.length; j++) {
+            let codes = [];
+            const productType = listTypeOfProduct[j];
+
+            switch ($('#products-2').find(":selected").val()) {
+                case "1":
+                    codes = this.get1VerticalNameNecklace(productType);
+                    break;
+                case "2":
+                    codes = this.get2FaithCrossNecklace(productType);
+                    break;
+                case "3":
+                    codes = this.get3SignatureStyleCustom(productType);
+                    break;
+                case "4":
+                    codes = this.get4CustomNameNecklace(productType);
+                    break;
+                case "5":
+                    codes = this.get5LoveKnot(productType);
+                    break;
+                case "6":
+                    codes = this.get6InterlockingHearts(productType);
+                    break;
+                case "7":
+                    codes = this.get7ForeverLove(productType);
+                    break;
+                case "8":
+                    codes = this.get8AlluringBeauty(productType);
+                    break;
+                case "9":
+                    codes = this.get9PerfectPairNecklace(productType);
+                    break;
+                default:
+                    codes = [];
+            }
+
+            if (codes === undefined) {
+                continue;
+            }
+
+            console.log(codes);
+
+            for (let i = 0; i < codes.length; i++) {
+                let url = shineOnUrl(codes[i]);
                 $.ajax({
                     url: url,
                     type: "POST",
