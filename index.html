@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ShineOn tool</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
 <body>
@@ -15,9 +16,9 @@
         <h1>
             <span>This tool was built with low cost.. Please use it correctly :D</span>
         </h1>
-        <div >
+        <div>
             <h4>
-                <span >Should turn off this setting for faster download:</span>
+                <span>Should turn off this setting for faster download:</span>
             </h4>
             <a href="chrome://settings/downloads">chrome://settings/downloads</a>
             <span> -> Ask where to save each file before downloading -> </span>
@@ -68,15 +69,48 @@
                 </div>
             </div>
         </div>
+
+
+        <div class="row tiktok" style="margin-top: 10%">
+            <div class="col-3">
+                <span>Product</span>
+                <div class="input-group-prepend">
+                    <form>
+                        <select id="tik-tok-products" name="products" class="form-select"
+                                aria-label="Default select example">
+                            <option value="love-knot">Love Knot</option>
+                            <option value="interlocking-hearts">Interlocking Hearts</option>
+                            <option value="alluring-beauty">Alluring Beauty</option>
+                            <option value="faith_cross">Faith Cross</option>
+                            <option value="lucky_in_love">Lucky In Love</option>
+                            <option value="eternal_hope">Eternal Hope</option>
+                            <option value="forever-love">Forever Love</option>
+                        </select>
+                    </form>
+                </div>
+            </div>
+            <div class="col-6">
+                <span>Link</span>
+                <div class="input-group">
+                    <input type="text" id="tik-tok-background-src-url" class="form-control">
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-primary" onclick="downloadTiTokImages()">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
     <br>
     <br>
 </div>
 <br>
 <script src="jquery-3.6.4.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 <script>
-    function shineOnUrl(code){
+    function shineOnUrl(code) {
         const url = 'https://api.shineon.com/v1/renders/' + code + '/make';
         return url;
     }
@@ -94,7 +128,7 @@
     }
 
 
-    async function downloadImage(index ,imageSrc, productType) {
+    async function downloadImage(index, imageSrc, productType) {
         const image = await fetch(imageSrc)
         const imageBlog = await image.blob()
         const imageURL = URL.createObjectURL(imageBlog)
@@ -107,22 +141,35 @@
         document.body.removeChild(link)
     }
 
+    async function downloadImageTikTok(index, imageSrc) {
+        const image = await fetch(imageSrc)
+        const imageBlog = await image.blob()
+        const imageURL = URL.createObjectURL(imageBlog)
+
+        const link = document.createElement('a')
+        link.href = imageURL
+        document.body.appendChild(link)
+        link.download = index + '-' + makeid(8)
+        link.click()
+        document.body.removeChild(link)
+    }
+
     function getLoveKnotCodes(key) {
-      const codes = new Map();
-      codes.set('14S', [12044, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/6.png', 17538, 17229, 14170, 12134, 12156]);
-      codes.set('14L', [12061, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/6.png', 12176, 12171, 12169, 12146, 12151]);
-      codes.set('18S', [12018, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/5.png', 17966, 12020,, 17967, 14188, 12744]);
-      codes.set('18L', [12024, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/5.png', 12386, 12385, 12388, 12291, 12610]);
-      return codes.get(key) ;
+        const codes = new Map();
+        codes.set('14S', [12044, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/6.png', 17538, 17229, 14170, 12134, 12156]);
+        codes.set('14L', [12061, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/6.png', 12176, 12171, 12169, 12146, 12151]);
+        codes.set('18S', [12018, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/5.png', 17966, 12020, , 17967, 14188, 12744]);
+        codes.set('18L', [12024, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/5.png', 12386, 12385, 12388, 12291, 12610]);
+        return codes.get(key);
     }
 
     function getForeverLoveCodes(key) {
-      const codes = new Map();
-      codes.set('14S', [3565, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/4.png', 2278, 2272, 5239, 1723, 8853]);
-      codes.set('14L', [9203, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/4.png', 9202, 1725, 1719, 11284, 1723]);
-      codes.set('18S', [3566, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/3.png', 2287, 17503, 13442, 13444, 11302]);
-      codes.set('18L', [9217, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/3.png', 9212, 5621, 13449, 13983, 13981]);
-      return codes.get(key);
+        const codes = new Map();
+        codes.set('14S', [3565, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/4.png', 2278, 2272, 5239, 1723, 8853]);
+        codes.set('14L', [9203, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/4.png', 9202, 1725, 1719, 11284, 1723]);
+        codes.set('18S', [3566, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/3.png', 2287, 17503, 13442, 13444, 11302]);
+        codes.set('18L', [9217, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/3.png', 9212, 5621, 13449, 13983, 13981]);
+        return codes.get(key);
     }
 
     function getAlluringBeautyCodes(key) {
@@ -144,24 +191,24 @@
     }
 
     function getLuckyInLoveCodes(key) {
-      const codes = new Map();
-      codes.set('14S', [9747, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/lucky.jpeg', 9763, 17471, 13543, 9756, 9754]);
-      codes.set('14L', [11113, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/lucky.jpeg', 9778, 17465, 9742, 9924, 9758]);
-      return codes.get(key);
+        const codes = new Map();
+        codes.set('14S', [9747, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/lucky.jpeg', 9763, 17471, 13543, 9756, 9754]);
+        codes.set('14L', [11113, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/lucky.jpeg', 9778, 17465, 9742, 9924, 9758]);
+        return codes.get(key);
     }
 
     function getEternalHopeCodes(key) {
-      const codes = new Map();
-      codes.set('14S', [11104, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/9.png', 8707, 10061, 13888, 8718, 8689]);
-      codes.set('14L', [11105, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/9.png', 8727, 8729, 13887, 8730, 12641]);
-      return codes.get(key);
+        const codes = new Map();
+        codes.set('14S', [11104, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/9.png', 8707, 10061, 13888, 8718, 8689]);
+        codes.set('14L', [11105, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/9.png', 8727, 8729, 13887, 8730, 12641]);
+        return codes.get(key);
     }
 
     function getFaithCrossCodes(key) {
-      const codes = new Map();
-      codes.set('14S', [11350, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/9.png', 12571, 11349, 11347, 12572, 12573]);
-      codes.set('14L', [11350, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/9.png', 11354, 12579, 11357, 12580, 11343]);
-      return codes.get(key);
+        const codes = new Map();
+        codes.set('14S', [11350, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/9.png', 12571, 11349, 11347, 12572, 12573]);
+        codes.set('14L', [11350, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/9.png', 11354, 12579, 11357, 12580, 11343]);
+        return codes.get(key);
     }
 
     function getCrossCodes(key) {
@@ -177,26 +224,37 @@
         codes.set('14L', [11511, 11494, 11500, 17457, 13641, 11510, 11490]);
         codes.set('18S', [11645, 11650, 11648, 11655, 13311, 11510, 11465]);
         codes.set('18L', [11486, 11484, 11485, 11475, 11474, 11467, 11481]);
-        return codes.get(key) ;
+        return codes.get(key);
     }
 
     function getCrossBraceletCodes(key) {
-      const codes = new Map();
-      codes.set('14S', [17960, 17451, 17212, 17190, 17221, 17245, 17241]);
-      codes.set('14L', [17961, 17450, 17449, 17211, 17209, 17247, 17216]);
-      return codes.get(key);
+        const codes = new Map();
+        codes.set('14S', [17960, 17451, 17212, 17190, 17221, 17245, 17241]);
+        codes.set('14L', [17961, 17450, 17449, 17211, 17209, 17247, 17216]);
+        return codes.get(key);
     }
 
 
-    function tempAlert(msg,duration)
-    {
+    function tempAlert(msg, duration) {
         const el = document.createElement("h3");
-        el.setAttribute("style","background-color:gray;text-align:center;");
+        el.setAttribute("style", "background-color:gray;text-align:center;");
         el.innerHTML = msg;
-        setTimeout(function(){
+        setTimeout(function () {
             el.parentNode.removeChild(el);
-        },duration);
+        }, duration);
         document.body.appendChild(el);
+    }
+
+    function getTikTokCodes(key) {
+        const codes = new Map();
+        codes.set('love-knot', [12044, 12018, 12061, 12024, 12135, 12139, 12145, 12133, 12171, 12386, 12671, 14188]);
+        codes.set('interlocking-hearts', [12046, 12045, 12051, 12067, 12263, 12266, 13329, 12287, 12288, 12448, 12609, 12447]);
+        codes.set('alluring-beauty', [12053, 12034, 12058, 12037, 12196, 12211, 12217, 12220, 12237, 12122, 12127, 13902]);
+        codes.set('faith_cross', [11350, 11358, 11347, 11348, 12571, 11354, 11357, 12577, 12572, 12573]);
+        codes.set('lucky_in_love', [9747, 9741, 9756, 9778, 17471, 17465, 9754, 9758, 9743, 9745]);
+        codes.set('eternal_hope', [11104, 11105, 8718, 8686, 8727, 8729, 12635, 12641, 13919, 13889]);
+        codes.set('forever-love', [10609, 10610, 9203, 9217, 1719, 1734, 2273, 2283, 9212, 13334, 13983, 13976]);
+        return codes.get(key);
     }
 
     function downloadImages() {
@@ -209,7 +267,7 @@
         const type = $('#types').find(":selected").val();
 
         if (type === 'update-variation') {
-            listTypeOfProduct = ['14S','14L','18S','18L'];
+            listTypeOfProduct = ['14S', '14L', '18S', '18L'];
         }
 
         for (let j = 0; j < listTypeOfProduct.length; j++) {
@@ -252,7 +310,7 @@
                     withReplacePosition2 = false;
                     break;
                 default:
-                  codes = [];
+                    codes = [];
             }
 
             if (codes === undefined) {
@@ -270,7 +328,7 @@
                     type: "POST",
                     headers: {"Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiZDA2NmM4NmEwY2E5ZDM3ODAwZGE2MGFkNGZmNTJkOGM4NjE3ZWYwM2QxNzNjNTVkNTcwZTkxN2ZmM2I1N2E4YzZiNWZhOTUxNDBkNWQ2Y2UiLCJpYXQiOjE3MDk4MTIxODAsIm5iZiI6MTcwOTgxMjE4MCwiZXhwIjoxNzQxMzQ4MTgwLCJzdWIiOiIyMTExOTIiLCJzY29wZXMiOlsicmVhZF9zaG9wIiwicmVhZF9vcmRlcnMiLCJyZWFkX3Byb2R1Y3RfdGVtcGxhdGVzIiwicmVhZF90cmFuc2Zvcm1hdGlvbnMiLCJ3cml0ZV9hcnR3b3JrIiwid3JpdGVfc2t1cyIsIndyaXRlX29yZGVycyIsIndyaXRlX2NyZWRpdHMiXX0.e-wRZ6C7v8GsBxLpTLFEUX_M_Gv70c458I-Gnum4meKGtYnfw9UmoCAf2IuGdXDZG_j18sdbvoMBy8pARhMug71yml85zvS-tGAq12W5GhArPp_Jz2GWmSorKp46TjBwS5xQhlNaD6WpJRoSygW5xV4smAf7ANdBlmxepGiXRzpFldMARaqWJqxRUxNQ3rfDOg1iuE8zxm7i4ffjJldxHY6lXtjKMWhfHbv7NGHDhIleG6S9nhyySm-KEG4uS3OMlkyQf6lcgksRCBDamKK4ME89piiu2V5zVtKy3XwiriPLVuw3zOB5ZoBagAoc2XMxtlC3MUm8vGVdeIbdlWLOneDXKx7iQiuXBPBlRWpE0imoX3Ywm2MrzCukjuxhzLcXqvEH4dFemKFE08Ix3j6H-GoDdKEAcTw9f4eO3ok2k-GAB3oOTxoxpU2zy5NQSY-z6-KWNL2ck8bCwtVrd_e02gBe-2KJ8dbol6pcF22udfE6noaE-DaWhFoxrW4d4nEs0B2693cS9cGv37f5f9ygeVGj5Y0zuQSU3mYxu2Bc4S0jKuu96Zm7orkQV0EjQVBxEnNdAiLRagkm1Jt8qM2p6SiG6jcu0EbDuVqZvZ-N0N7Hzr3SZdKHlLd2fou3TVKjN224AvKC2egMDZsZv-j9z1fIhiomeGZMu6woJz0468M"},
                     data: {
-                        "src" : backGroundSrcUrl,
+                        "src": backGroundSrcUrl,
                     },
                     success: async function (response) {
                         const responseUrl = response.render.make.src;
@@ -280,7 +338,33 @@
             }
         }
     }
+
+    function downloadTiTokImages() {
+        tempAlert('Please wait!', 3000);
+        const backGroundSrcUrl = document.getElementById('tik-tok-background-src-url').value;
+        if (backGroundSrcUrl === '') {
+            return;
+        }
+        var codes;
+        var type = $('#tik-tok-products').find(":selected").val();
+        codes = this.getTikTokCodes(type);
+
+        for (let i = 0; i < codes.length; i++) {
+            $.ajax({
+                url: shineOnUrl(codes[i]),
+                type: "POST",
+                headers: {"Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiZDA2NmM4NmEwY2E5ZDM3ODAwZGE2MGFkNGZmNTJkOGM4NjE3ZWYwM2QxNzNjNTVkNTcwZTkxN2ZmM2I1N2E4YzZiNWZhOTUxNDBkNWQ2Y2UiLCJpYXQiOjE3MDk4MTIxODAsIm5iZiI6MTcwOTgxMjE4MCwiZXhwIjoxNzQxMzQ4MTgwLCJzdWIiOiIyMTExOTIiLCJzY29wZXMiOlsicmVhZF9zaG9wIiwicmVhZF9vcmRlcnMiLCJyZWFkX3Byb2R1Y3RfdGVtcGxhdGVzIiwicmVhZF90cmFuc2Zvcm1hdGlvbnMiLCJ3cml0ZV9hcnR3b3JrIiwid3JpdGVfc2t1cyIsIndyaXRlX29yZGVycyIsIndyaXRlX2NyZWRpdHMiXX0.e-wRZ6C7v8GsBxLpTLFEUX_M_Gv70c458I-Gnum4meKGtYnfw9UmoCAf2IuGdXDZG_j18sdbvoMBy8pARhMug71yml85zvS-tGAq12W5GhArPp_Jz2GWmSorKp46TjBwS5xQhlNaD6WpJRoSygW5xV4smAf7ANdBlmxepGiXRzpFldMARaqWJqxRUxNQ3rfDOg1iuE8zxm7i4ffjJldxHY6lXtjKMWhfHbv7NGHDhIleG6S9nhyySm-KEG4uS3OMlkyQf6lcgksRCBDamKK4ME89piiu2V5zVtKy3XwiriPLVuw3zOB5ZoBagAoc2XMxtlC3MUm8vGVdeIbdlWLOneDXKx7iQiuXBPBlRWpE0imoX3Ywm2MrzCukjuxhzLcXqvEH4dFemKFE08Ix3j6H-GoDdKEAcTw9f4eO3ok2k-GAB3oOTxoxpU2zy5NQSY-z6-KWNL2ck8bCwtVrd_e02gBe-2KJ8dbol6pcF22udfE6noaE-DaWhFoxrW4d4nEs0B2693cS9cGv37f5f9ygeVGj5Y0zuQSU3mYxu2Bc4S0jKuu96Zm7orkQV0EjQVBxEnNdAiLRagkm1Jt8qM2p6SiG6jcu0EbDuVqZvZ-N0N7Hzr3SZdKHlLd2fou3TVKjN224AvKC2egMDZsZv-j9z1fIhiomeGZMu6woJz0468M"},
+                data: {
+                    "src": backGroundSrcUrl,
+                },
+                success: async function (response) {
+                    const responseUrl = response.render.make.src;
+                    await downloadImageTikTok(i + 1, responseUrl);
+                },
+            });
+        }
+
+    }
 </script>
 </body>
-
 </html>
