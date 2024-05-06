@@ -207,8 +207,7 @@
 
     function getFaithCrossCodes(key) {
         const codes = new Map();
-        codes.set('14S', [11350, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/9.png', 12571, 11349, 11347, 12572, 12573]);
-        codes.set('14L', [11350, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/9.png', 11354, 12579, 11357, 12580, 11343]);
+        codes.set('14S', [11350, 12571, 11348, 11343, 11347, 12572, 12573, 11350, 11354, 12579, 11344, 11356, 11357, 12573]);
         return codes.get(key);
     }
 
@@ -298,6 +297,7 @@
                     break;
                 case "faith_cross":
                     codes = this.getFaithCrossCodes(productType);
+                    withReplacePosition2 = false;
                     break;
                 case "cuban":
                     codes = this.getCubanCodes(productType);
