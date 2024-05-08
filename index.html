@@ -44,6 +44,9 @@
                             <option value="cuban">Cuban</option>
                             <option value="cross">Cross</option>
                             <option value="cross_bracelet">Cross Bracelet</option>
+                            <option value="square_acrylic_plaque">Square Acrylic Plaque</option>
+                            <option value="heart_acrylic_plaque">Heart Acrylic Plaque</option>
+                            <option value="mens_cross_bracelet">Men's Cross Bracelet</option>
                         </select>
                     </form>
                 </div>
@@ -78,13 +81,6 @@
                     <form>
                         <select id="tik-tok-products" name="products" class="form-select"
                                 aria-label="Default select example">
-                            <option value="love-knot">Love Knot</option>
-                            <option value="interlocking-hearts">Interlocking Hearts</option>
-                            <option value="alluring-beauty">Alluring Beauty</option>
-                            <option value="faith_cross">Faith Cross</option>
-                            <option value="lucky_in_love">Lucky In Love</option>
-                            <option value="eternal_hope">Eternal Hope</option>
-                            <option value="forever-love">Forever Love</option>
                             <option value="anh-1">Ảnh 1</option>
                         </select>
                     </form>
@@ -234,6 +230,27 @@
         return codes.get(key);
     }
 
+    function getSquareAcrylicPlaque(key) {
+        const codes = new Map();
+        codes.set('14S', [16539, 16975, 16983, 16552, 16986, 17032, 17208]);
+        codes.set('14L', [16542, 21083, 21081, 17009, 17008, 17001, 16987]);
+        return codes.get(key);
+    }
+
+    function getHeartAcrylicPlaque(key) {
+        const codes = new Map();
+        codes.set('14S', [18701, 18701, 18701, 18703, 18702, 18711, 18712]);
+        codes.set('14L', [18712, 18712, 19390, 19389, 19389, 19387, 19386]);
+        return codes.get(key);
+    }
+
+    function getMensCrossBracelet(key) {
+        const codes = new Map();
+        codes.set('14S', [19501, 19570, 19559, 19465, 19554, 19566, 19560]);
+        codes.set('14L', [19502, 19500, 19498, 19465, 19554, 19459, 19567]);
+        return codes.get(key);
+    }
+
 
     function tempAlert(msg, duration) {
         const el = document.createElement("h3");
@@ -247,13 +264,6 @@
 
     function getTikTokCodes(key) {
         const codes = new Map();
-        codes.set('love-knot', [12044, 12018, 12061, 12024, 12135, 12139, 12145, 12133, 12171, 12386, 12671, 14188]);
-        codes.set('interlocking-hearts', [12046, 12045, 12051, 12067, 12263, 12266, 13329, 12287, 12288, 12448, 12609, 12447]);
-        codes.set('alluring-beauty', [12053, 12034, 12058, 12037, 12196, 12211, 12217, 12220, 12237, 12122, 12127, 13902]);
-        codes.set('faith_cross', [11350, 11358, 11347, 11348, 12571, 11354, 11357, 12577, 12572, 12573]);
-        codes.set('lucky_in_love', [9747, 9741, 9756, 9778, 17471, 17465, 9754, 9758, 9743, 9745]);
-        codes.set('eternal_hope', [11104, 11105, 8718, 8686, 8727, 8729, 12635, 12641, 13919, 13889]);
-        codes.set('forever-love', [10609, 10610, 9203, 9217, 1719, 1734, 2273, 2283, 9212, 13334, 13983, 13976]);
         codes.set('anh-1', [12044, 12018, 3565, 3566, 12053, 12034, 12046, 12045, 11350]);
         return codes.get(key);
     }
@@ -309,6 +319,18 @@
                     break;
                 case "cross_bracelet":
                     codes = this.getCrossBraceletCodes(productType);
+                    withReplacePosition2 = false;
+                    break;
+                case "square_acrylic_plaque":
+                    codes = this.getSquareAcrylicPlaque(productType);
+                    withReplacePosition2 = false;
+                    break;
+                case "heart_acrylic_plaque":
+                    codes = this.getHeartAcrylicPlaque(productType);
+                    withReplacePosition2 = false;
+                    break;
+                case "mens_cross_bracelet":
+                    codes = this.getMensCrossBracelet(productType);
                     withReplacePosition2 = false;
                     break;
                 default:
