@@ -47,6 +47,9 @@
                             <option value="square_acrylic_plaque">Square Acrylic Plaque</option>
                             <option value="heart_acrylic_plaque">Heart Acrylic Plaque</option>
                             <option value="mens_cross_bracelet">Men's Cross Bracelet</option>
+                            <option value="cuban_cross_necklace">Cuban Cross Necklace</option>
+                            <option value="cross_1">Cross 1</option>
+                            <option value="cross_2">Cross 2</option>
                         </select>
                     </form>
                 </div>
@@ -232,15 +235,15 @@
 
     function getSquareAcrylicPlaque(key) {
         const codes = new Map();
-        codes.set('14S', [16539, 16975, 16983, 16552, 16986, 17032, 17208]);
+        codes.set('14S', [16539, 16975, 17208, 16986, 17032, 17207, 16983]);
         codes.set('14L', [16542, 21083, 21081, 17009, 17008, 17001, 16987]);
         return codes.get(key);
     }
 
     function getHeartAcrylicPlaque(key) {
         const codes = new Map();
-        codes.set('14S', [18701, 18701, 18701, 18703, 18702, 18711, 18712]);
-        codes.set('14L', [18712, 18712, 19390, 19389, 19389, 19387, 19386]);
+        codes.set('14S', [18701, 18705, 18703, 18704, 18707, 18711, 18712]);
+        codes.set('14L', [18706, 21091, 21090, 19390, 19389, 19387, 19388]);
         return codes.get(key);
     }
 
@@ -248,6 +251,27 @@
         const codes = new Map();
         codes.set('14S', [19501, 19570, 19559, 19465, 19554, 19566, 19560]);
         codes.set('14L', [19502, 19500, 19498, 19465, 19554, 19459, 19567]);
+        return codes.get(key);
+    }
+
+    function getCubanCrossNecklace(key) {
+        const codes = new Map();
+        codes.set('14S', [11915, 16733, 12081, 12087, 12092, 16735, 16739]);
+        codes.set('14L', [11915, 12096, 16746, 12090, 12092, 16743, 16745]);
+        return codes.get(key);
+    }
+
+    function getCross1(key) {
+        const codes = new Map();
+        codes.set('14S', [3421, 2649, 2656, 2646, 14717, 2653, 2644]);
+        codes.set('14L', [3421, 2017, 2978, 14719, 2979, 9541, 14716]);
+        return codes.get(key);
+    }
+
+    function getCross2(key) {
+        const codes = new Map();
+        codes.set('14S', [5036, 4871, 4876, 8746, 14754, 8747, 4872]);
+        codes.set('14L', [5036, 4879, 8752, 4875, 8750, 8751, 14753]);
         return codes.get(key);
     }
 
@@ -331,6 +355,18 @@
                     break;
                 case "mens_cross_bracelet":
                     codes = this.getMensCrossBracelet(productType);
+                    withReplacePosition2 = false;
+                    break;
+                case "cuban_cross_necklace":
+                    codes = this.getCubanCrossNecklace(productType);
+                    withReplacePosition2 = false;
+                    break;
+                case "cross_1":
+                    codes = this.getCross1(productType);
+                    withReplacePosition2 = false;
+                    break;
+                case "cross_2":
+                    codes = this.getCross2(productType);
                     withReplacePosition2 = false;
                     break;
                 default:
