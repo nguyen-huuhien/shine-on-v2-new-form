@@ -84,7 +84,8 @@
                     <form>
                         <select id="tik-tok-products" name="products" class="form-select"
                                 aria-label="Default select example">
-                            <option value="anh-1">Ảnh 1</option>
+                            <option value="women-anh-1">Women Ảnh 1</option>
+                            <option value="man-anh-1">Man Ảnh 1</option>
                         </select>
                     </form>
                 </div>
@@ -264,7 +265,7 @@
     function getCross1(key) {
         const codes = new Map();
         codes.set('14S', [3421, 2649, 2656, 2646, 14717, 2653, 2644]);
-        codes.set('14L', [3421, 2017, 2978, 14719, 2979, 9541, 14716]);
+        codes.set('14L', [3421, 3771, 2978, 14719, 2979, 9541, 14716]);
         return codes.get(key);
     }
 
@@ -288,7 +289,8 @@
 
     function getTikTokCodes(key) {
         const codes = new Map();
-        codes.set('anh-1', [12044, 12018, 3565, 3566, 12053, 12034, 12046, 12045, 11350]);
+        codes.set('women-anh-1', [12044, 12018, 3565, 3566, 12053, 12034, 12046, 12045, 11350, 9747, 20476]);
+        codes.set('man-anh-1', [11915, 3421, 5036, 11570, 11645]);
         return codes.get(key);
     }
 
