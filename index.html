@@ -350,15 +350,14 @@
     //Duy nho
     function getAnh1DuyNho() {
         const codes = new Map();
-        codes.set('1', [12570, 12572, 11348, 11347, 12569, 12573]);
-        codes.set('2', [11354, 12577, 12579, 11357, 11356, 12578]);
+        codes.set('1', [14973, 12046]);
         return codes;
     }
 
     function getAnhListingDuyNho() {
         const codes = new Map();
         codes.set('AB', [12237, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/2.png', 12235, 12222, 12219, 12043]);
-        codes.set('IH', [9202, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/8.png', 5545, 17197, 9233, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/INTERLOCKINGHEART/ANHMAU2.png']);
+        codes.set('IH', [12287, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/8.png', 12284, 12275, 12052, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/INTERLOCKINGHEART/ANHMAU2.png']);
         return codes;
     }
 
@@ -498,23 +497,23 @@
                 } else {
                     // Use await here to wait for the AJAX request to complete
                     // await new Promise((resolve, reject) => {
-                        $.ajax({
-                            url: shineOnUrl(item),
-                            type: "POST",
-                            headers: {"Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiZDA2NmM4NmEwY2E5ZDM3ODAwZGE2MGFkNGZmNTJkOGM4NjE3ZWYwM2QxNzNjNTVkNTcwZTkxN2ZmM2I1N2E4YzZiNWZhOTUxNDBkNWQ2Y2UiLCJpYXQiOjE3MDk4MTIxODAsIm5iZiI6MTcwOTgxMjE4MCwiZXhwIjoxNzQxMzQ4MTgwLCJzdWIiOiIyMTExOTIiLCJzY29wZXMiOlsicmVhZF9zaG9wIiwicmVhZF9vcmRlcnMiLCJyZWFkX3Byb2R1Y3RfdGVtcGxhdGVzIiwicmVhZF90cmFuc2Zvcm1hdGlvbnMiLCJ3cml0ZV9hcnR3b3JrIiwid3JpdGVfc2t1cyIsIndyaXRlX29yZGVycyIsIndyaXRlX2NyZWRpdHMiXX0.e-wRZ6C7v8GsBxLpTLFEUX_M_Gv70c458I-Gnum4meKGtYnfw9UmoCAf2IuGdXDZG_j18sdbvoMBy8pARhMug71yml85zvS-tGAq12W5GhArPp_Jz2GWmSorKp46TjBwS5xQhlNaD6WpJRoSygW5xV4smAf7ANdBlmxepGiXRzpFldMARaqWJqxRUxNQ3rfDOg1iuE8zxm7i4ffjJldxHY6lXtjKMWhfHbv7NGHDhIleG6S9nhyySm-KEG4uS3OMlkyQf6lcgksRCBDamKK4ME89piiu2V5zVtKy3XwiriPLVuw3zOB5ZoBagAoc2XMxtlC3MUm8vGVdeIbdlWLOneDXKx7iQiuXBPBlRWpE0imoX3Ywm2MrzCukjuxhzLcXqvEH4dFemKFE08Ix3j6H-GoDdKEAcTw9f4eO3ok2k-GAB3oOTxoxpU2zy5NQSY-z6-KWNL2ck8bCwtVrd_e02gBe-2KJ8dbol6pcF22udfE6noaE-DaWhFoxrW4d4nEs0B2693cS9cGv37f5f9ygeVGj5Y0zuQSU3mYxu2Bc4S0jKuu96Zm7orkQV0EjQVBxEnNdAiLRagkm1Jt8qM2p6SiG6jcu0EbDuVqZvZ-N0N7Hzr3SZdKHlLd2fou3TVKjN224AvKC2egMDZsZv-j9z1fIhiomeGZMu6woJz0468M"},
-                            data: {
-                                "src": backGroundSrcUrl,
-                            },
-                            success: async function (response) {
-                                const responseUrl = response.render.make.src;
-                                downloadImage(countNumber, responseUrl, key);
-                                resolve();
-                            },
-                            error: function (error) {
-                                // ... (handle the error)
-                                reject();  // Reject the promise when the AJAX request fails
-                            }
-                        })
+                    $.ajax({
+                        url: shineOnUrl(item),
+                        type: "POST",
+                        headers: {"Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiZDA2NmM4NmEwY2E5ZDM3ODAwZGE2MGFkNGZmNTJkOGM4NjE3ZWYwM2QxNzNjNTVkNTcwZTkxN2ZmM2I1N2E4YzZiNWZhOTUxNDBkNWQ2Y2UiLCJpYXQiOjE3MDk4MTIxODAsIm5iZiI6MTcwOTgxMjE4MCwiZXhwIjoxNzQxMzQ4MTgwLCJzdWIiOiIyMTExOTIiLCJzY29wZXMiOlsicmVhZF9zaG9wIiwicmVhZF9vcmRlcnMiLCJyZWFkX3Byb2R1Y3RfdGVtcGxhdGVzIiwicmVhZF90cmFuc2Zvcm1hdGlvbnMiLCJ3cml0ZV9hcnR3b3JrIiwid3JpdGVfc2t1cyIsIndyaXRlX29yZGVycyIsIndyaXRlX2NyZWRpdHMiXX0.e-wRZ6C7v8GsBxLpTLFEUX_M_Gv70c458I-Gnum4meKGtYnfw9UmoCAf2IuGdXDZG_j18sdbvoMBy8pARhMug71yml85zvS-tGAq12W5GhArPp_Jz2GWmSorKp46TjBwS5xQhlNaD6WpJRoSygW5xV4smAf7ANdBlmxepGiXRzpFldMARaqWJqxRUxNQ3rfDOg1iuE8zxm7i4ffjJldxHY6lXtjKMWhfHbv7NGHDhIleG6S9nhyySm-KEG4uS3OMlkyQf6lcgksRCBDamKK4ME89piiu2V5zVtKy3XwiriPLVuw3zOB5ZoBagAoc2XMxtlC3MUm8vGVdeIbdlWLOneDXKx7iQiuXBPBlRWpE0imoX3Ywm2MrzCukjuxhzLcXqvEH4dFemKFE08Ix3j6H-GoDdKEAcTw9f4eO3ok2k-GAB3oOTxoxpU2zy5NQSY-z6-KWNL2ck8bCwtVrd_e02gBe-2KJ8dbol6pcF22udfE6noaE-DaWhFoxrW4d4nEs0B2693cS9cGv37f5f9ygeVGj5Y0zuQSU3mYxu2Bc4S0jKuu96Zm7orkQV0EjQVBxEnNdAiLRagkm1Jt8qM2p6SiG6jcu0EbDuVqZvZ-N0N7Hzr3SZdKHlLd2fou3TVKjN224AvKC2egMDZsZv-j9z1fIhiomeGZMu6woJz0468M"},
+                        data: {
+                            "src": backGroundSrcUrl,
+                        },
+                        success: async function (response) {
+                            const responseUrl = response.render.make.src;
+                            downloadImage(countNumber, responseUrl, key);
+                            resolve();
+                        },
+                        error: function (error) {
+                            // ... (handle the error)
+                            reject();  // Reject the promise when the AJAX request fails
+                        }
+                    })
                     // })
                 }
             }
