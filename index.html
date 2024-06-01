@@ -28,79 +28,168 @@
     <br>
     <br>
     <div class="container">
-        <div class="row">
-            <div class="col-3">
-                <span>Product</span>
-                <div class="input-group-prepend">
-                    <form>
-                        <select id="products" name="products" class="form-select" aria-label="Default select example">
-                            <option value="love-knot">Love Knot</option>
-                            <option value="forever-love">Forever Love</option>
-                            <option value="alluring-beauty">Alluring Beauty</option>
-                            <option value="interlocking-hearts">Interlocking Hearts</option>
-                            <option value="lucky_in_love">Lucky In Love</option>
-                            <option value="eternal_hope">Eternal Hope</option>
-                            <option value="cuban">Cuban</option>
-                            <option value="cross">Cross</option>
-                            <option value="cross_bracelet">Cross Bracelet</option>
-                            <option value="square_acrylic_plaque">Square Acrylic Plaque</option>
-                            <option value="heart_acrylic_plaque">Heart Acrylic Plaque</option>
-                            <option value="mens_cross_bracelet">Men's Cross Bracelet</option>
-                            <option value="cuban_cross_necklace">Cuban Cross Necklace</option>
-                            <option value="cross_1">Cross 1</option>
-                            <option value="cross_2">Cross 2</option>
-                            <option value="faith_cross">Faith Cross</option>
-                        </select>
-                    </form>
+        <h2>Team 1</h2>
+        <div class="container-team-1">
+            <div class="row">
+                <div class="col-3">
+                    <span>Product</span>
+                    <div class="input-group-prepend">
+                        <form>
+                            <select id="products-team-1" name="products" class="form-select"
+                                    aria-label="Default select example">
+                                <option value="love-knot-team-1">Love Knot</option>
+                                <option value="forever-love-team-1">Forever Love</option>
+                                <option value="interlocking-hearts-team-1">Interlocking Hearts</option>
+                                <option value="alluring-beauty-team-1">Alluring Beauty</option>
+                                <option value="faith_cross-team-1">Faith Cross</option>
+                                <option value="eternal_hope-team-1">Eternal Hope</option>
+                                <option value="lucky_in_love-team-1">Lucky In Love</option>
+                            </select>
+                        </form>
+                    </div>
                 </div>
-            </div>
-            <div class="col-3">
-                <span>Step</span>
-                <div class="input-group-prepend">
-                    <form>
-                        <select id="types" name="types" class="form-select" aria-label="Default select example">
-                            <option value="create-product">Create product</option>
-                            <option value="update-variation">Update variation</option>
-                        </select>
-                    </form>
-                </div>
-            </div>
-            <div class="col-6">
-                <span>Link</span>
-                <div class="input-group">
-                    <input type="text" id="background-src-url" class="form-control">
-                    <div class="input-group-append">
-                        <button type="submit" class="btn btn-primary" onclick="downloadImages()">Submit</button>
+                <div class="col-6">
+                    <span>Link</span>
+                    <div class="input-group">
+                        <input type="text" id="background-src-url-team-1" class="form-control">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-primary"
+                                    onclick="downloadImages('products-team-1', 'background-src-url-team-1')">
+                                Submit
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-
-
-        <div class="row tiktok" style="margin-top: 10%">
-            <div class="col-3">
-                <span>Product</span>
-                <div class="input-group-prepend">
-                    <form>
-                        <select id="tik-tok-products" name="products" class="form-select"
-                                aria-label="Default select example">
-                            <option value="women-anh-1">Women Ảnh 1</option>
-                            <option value="man-anh-1">Man Ảnh 1</option>
-                        </select>
-                    </form>
+        <br>
+        <h2>Team 2</h2>
+        <div class="container-team-2">
+            <div class="row">
+                <div class="col-3">
+                    <span>Product</span>
+                    <div class="input-group-prepend">
+                        <form>
+                            <select id="products-team-2" name="products" class="form-select"
+                                    aria-label="Default select example">
+                                <option value="love-knot-team-2">Love Knot</option>
+                                <option value="forever-love-team-2">Forever Love</option>
+                                <option value="interlocking-hearts-team-2">Interlocking Hearts</option>
+                                <option value="alluring-beauty-team-2">Alluring Beauty</option>
+                                <option value="faith_cross-team-2">Faith Cross</option>
+                                <option value="eternal_hope-team-2">Eternal Hope</option>
+                                <option value="lucky_in_love-team-2">Lucky In Love</option>
+                            </select>
+                        </form>
+                    </div>
                 </div>
-            </div>
-            <div class="col-6">
-                <span>Link</span>
-                <div class="input-group">
-                    <input type="text" id="tik-tok-background-src-url" class="form-control">
-                    <div class="input-group-append">
-                        <button type="submit" class="btn btn-primary" onclick="downloadTiTokImages()">Submit</button>
+                <div class="col-6">
+                    <span>Link</span>
+                    <div class="input-group">
+                        <input type="text" id="background-src-url-team-2" class="form-control">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-primary"
+                                    onclick="downloadImages('products-team-2', 'background-src-url-team-2')">Submit
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <br>
 
+        <h2>Duy Nho</h2>
+        <div class="container-duy-nho">
+            <div class="row">
+                <div class="col-3">
+                    <span>Product</span>
+                    <div class="input-group-prepend">
+                        <form>
+                            <select id="products-duy-nho" name="products" class="form-select"
+                                    aria-label="Default select example">
+                                <option value="anh-1-duy-nho">Ảnh 1</option>
+                                <option value="anh-listing-duy-nho">Ảnh Listing</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <span>Link</span>
+                    <div class="input-group">
+                        <input type="text" id="background-src-url-duy-nho" class="form-control">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-primary"
+                                    onclick="downloadImages('products-duy-nho', 'background-src-url-duy-nho')">Submit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <h2>Name Necklace</h2>
+        <div class="container-name-necklace">
+            <div class="row">
+                <div class="col-3">
+                    <span>Product</span>
+                    <div class="input-group-prepend">
+                        <form>
+                            <select id="products-name-necklace" name="products" class="form-select"
+                                    aria-label="Default select example">
+                                <option value="heart-name-necklace">Heart Name Necklace</option>
+                                <option value="name-necklace">Name Necklace</option>
+                                <option value="vertical-name-necklace">Vertical Name Necklace</option>
+                                <option value="signature-name-necklace">Signature Name Necklace</option>
+                                <option value="anh-1-name-necklace">Ảnh 1 Name Necklace</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <span>Link</span>
+                    <div class="input-group">
+                        <input type="text" id="background-src-url-name-necklace" class="form-control">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-primary"
+                                    onclick="downloadImages('products-name-necklace', 'background-src-url-name-necklace')">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <h2>Anh 1 Woman</h2>
+        <div class="container-anh-1-woman">
+            <div class="row">
+                <div class="col-3">
+                    <span>Product</span>
+                    <div class="input-group-prepend">
+                        <form>
+                            <select id="products-anh-1-woman" name="products" class="form-select"
+                                    aria-label="Default select example">
+                                <option value="anh-1-woman">Ảnh 1 Woman</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <span>Link</span>
+                    <div class="input-group">
+                        <input type="text" id="background-src-url-anh-1-woman" class="form-control">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-primary"
+                                    onclick="downloadImages('products-anh-1-woman', 'background-src-url-anh-1-woman')">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <br>
     <br>
@@ -137,145 +226,179 @@
         const link = document.createElement('a')
         link.href = imageURL
         document.body.appendChild(link)
-        link.download = productType + '-' + index + '-' + makeid(8)
+        link.download = index + '-' + productType + '-' + makeid(8)
         link.click()
         document.body.removeChild(link)
     }
 
-    async function downloadImageTikTok(index, imageSrc) {
-        const image = await fetch(imageSrc)
-        const imageBlog = await image.blob()
-        const imageURL = URL.createObjectURL(imageBlog)
-
-        const link = document.createElement('a')
-        link.href = imageURL
-        document.body.appendChild(link)
-        link.download = index + '-' + makeid(8)
-        link.click()
-        document.body.removeChild(link)
-    }
-
-    function getLoveKnotCodes(key) {
+    //Team 1 Codes
+    function getLoveKnotCodesTeam1() {
         const codes = new Map();
-        codes.set('14S', [12044, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/6.png', 17538, 17229, 14170, 12134, 12156]);
-        codes.set('14L', [12061, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/6.png', 12176, 12171, 12169, 12146, 12151]);
-        codes.set('18S', [12018, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/5.png', 17966, 12020, , 17967, 14188, 12744]);
-        codes.set('18L', [12024, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/5.png', 12386, 12385, 12388, 12291, 12610]);
-        return codes.get(key);
+        codes.set('14S', ['https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/6.png', 12147, 12134, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/LoveKnot/ANHDC.png', 12158, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/LoveKnot/ANHMAU1.png']);
+        codes.set('14L', [12171, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/6.png', 12173, 12671, 12166, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/LoveKnot/ANHMAU3.png']);
+        codes.set('18S', ['https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/5.png', 17967, 17968, 12072, 12744, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/LoveKnot/ANHMAU5.png']);
+        codes.set('18L', ['https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/5.png', 15015, 12610, 12745, 12025, 12387]);
+        return codes;
     }
 
-    function getForeverLoveCodes(key) {
+    function getForeverLoveCodesTeam1() {
         const codes = new Map();
-        codes.set('14S', [3565, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/4.png', 2278, 2272, 5239, 1723, 8853]);
-        codes.set('14L', [9203, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/4.png', 9202, 1725, 1719, 11284, 1723]);
-        codes.set('18S', [3566, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/3.png', 2287, 17503, 13442, 13444, 11302]);
-        codes.set('18L', [9217, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/3.png', 9212, 5621, 13449, 13983, 13981]);
-        return codes.get(key);
+        codes.set('14S', ['https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/4.png', 5125, 2272, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/ForeverLove/ANHDC1.png', 8852, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/ForeverLove/ANHMAU1.png']);
+        codes.set('14L', [9202, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/4.png', 5545, 17197, 9233, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/ForeverLove/ANHMAU2.png']);
+        codes.set('18S', ['https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/3.png', 13442, 13444, 2283, 9366, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/ForeverLove/ANHMAU1.png']);
+        codes.set('18L', ['https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/3.png', 5621, 9213, 13447, 1731, 13449]);
+        return codes;
     }
 
-    function getAlluringBeautyCodes(key) {
+    function getInterlockingHeartsCodesTeam1() {
         const codes = new Map();
-        codes.set('14S', [12053, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/2.png', 12211, 12201, 12216, 12207, 12202]);
-        codes.set('14L', [12058, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/2.png', 12225, 12239, 12237, 12220, 12412]);
-        codes.set('18S', [12034, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/1.png', 12112, 12112, 12606, 12747, 12127]);
-        codes.set('18L', [12037, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/1.png', 12122, 12121, 12607, 12240, 12128]);
-        return codes.get(key);
+        codes.set('14S', ['https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/8.png', 12260, 12263, 17537, 12252, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/INTERLOCKINGHEART/ANHMAU1.png']);
+        codes.set('14L', [12288, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/8.png', 12274, 12272, 14254, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/INTERLOCKINGHEART/ANHMAU3.png']);
+        codes.set('18S', ['https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/7.png', 12102, 12608, 12077, 12774, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/INTERLOCKINGHEART/ANHMAU5.png']);
+        codes.set('18L', [12105, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/7.png', 12110, 12777, 12105, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/INTERLOCKINGHEART/ANHMAU6.png']);
+        return codes;
     }
 
-    function getInterlockingHeartsCodes(key) {
+    function getAlluringBeautyCodesTeam1() {
         const codes = new Map();
-        codes.set('14S', [12046, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/8.png', 12047, 12260, 12265, 12263, 14121]);
-        codes.set('14L', [12051, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/8.png', 12287, 12274, 12288, 12284, 12250]);
-        codes.set('18S', [12045, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/7.png', 14150, 12103, 12608, 14203, 12448]);
-        codes.set('18L', [12067, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/7.png', 12106, 12105, 12110, 14131, 12289]);
-        return codes.get(key);
+        codes.set('14S', ['https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/2.png', 12211, 12201, 12215, 12210, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/AlluringBeauty/ANHMAU1.png']);
+        codes.set('14L', [12237, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/2.png', 12235, 12222, 12219, 12043]);
+        codes.set('18S', ['https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/1.png', 12112, 12606, 12413, 12629, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/AlluringBeauty/ANHMAU3.png']);
+        codes.set('18L', ['https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/1.png', 12122, 12123, 12117, 12768, 12128]);
+        return codes;
     }
 
-    function getLuckyInLoveCodes(key) {
+    function getLuckyInLoveCodesTeam1() {
         const codes = new Map();
-        codes.set('14S', [9747, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/lucky.jpeg', 9763, 17471, 13543, 9756, 9754]);
-        codes.set('14L', [11113, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/lucky.jpeg', 9778, 17465, 9742, 9924, 9758]);
-        return codes.get(key);
+        codes.set('14S', [17471, 13527, 9775, 9752, 9756, 9758]);
+        codes.set('14L', [17474, 13547, 9778, 9923, 9742, 9758]);
+        return codes;
     }
 
-    function getEternalHopeCodes(key) {
+    function getEternalHopeCodesTeam1() {
         const codes = new Map();
         codes.set('14S', [11104, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/9.png', 8707, 10061, 13888, 8718, 8689]);
         codes.set('14L', [11105, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/9.png', 8727, 8729, 13887, 8730, 12641]);
-        return codes.get(key);
+        return codes;
     }
 
-    function getFaithCrossCodes(key) {
+    function getFaithCrossCodesTeam1() {
         const codes = new Map();
-        codes.set('14S', [11350, 12571, 11348, 11343, 11347, 12572, 12573, 11350, 11354, 12579, 11344, 11356, 11357, 12573]);
-        return codes.get(key);
+        codes.set('14S', [12571, 11343, 11348, 11347, 12569, 12573]);
+        codes.set('14L', [11354, 12577, 12579, 11357, 11356, 12578]);
+        return codes;
     }
 
-    function getCrossCodes(key) {
+    //Team 2 codes
+    function getLoveKnotCodesTeam2() {
         const codes = new Map();
-        codes.set('14S', [11350, 12571, 11348, 11343, 11347, 12572, 12573]);
-        codes.set('14L', [11350, 11354, 12579, 11344, 11356, 11357, 12573]);
-        return codes.get(key);
+        codes.set('14S', ['https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/6.png', 17538, 12139, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/LoveKnot/ANHDC.png', 12155, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/LoveKnot/ANHMAU2.png']);
+        codes.set('14L', [12175, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/6.png', 12168, 12672, 12167, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/LoveKnot/ANHMAU4.png']);
+        codes.set('18S', ['https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/5.png', 17966, 12020, 12388, 12743, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/LoveKnot/ANHMAU5.png']);
+        codes.set('18L', ['https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/5.png', 12386, 12381, 12664, 12027, 12074]);
+        return codes;
     }
 
-    function getCubanCodes(key) {
+    function getForeverLoveCodesTeam2() {
         const codes = new Map();
-        codes.set('14S', [11570, 11571, 11587, 11576, 11509, 11507, 11488]);
-        codes.set('14L', [11511, 11494, 11500, 17457, 13641, 11510, 11490]);
-        codes.set('18S', [11645, 11650, 11648, 11655, 13311, 11510, 11465]);
-        codes.set('18L', [11486, 11484, 11485, 11475, 11474, 11467, 11481]);
-        return codes.get(key);
+        codes.set('14S', ['https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/4.png', 5119, 2273, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/ForeverLove/ANHDC2.png', 8850, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/ForeverLove/ANHMAU2.png']);
+        codes.set('14L', [1719, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/4.png', 1725, 9236, 9235, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/ForeverLove/ANHMAU1.png']);
+        codes.set('18S', ['https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/3.png', 13440, 13438, 2282, 1728, 11300]);
+        codes.set('18L', [9216, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/3.png', 9212, 9214, 11301, 13451]);
+        return codes;
     }
 
-    function getCrossBraceletCodes(key) {
+    function getInterlockingHeartsCodesTeam2() {
         const codes = new Map();
-        codes.set('14S', [17960, 17451, 17212, 17190, 17221, 17245, 17241]);
-        codes.set('14L', [17961, 17450, 17449, 17211, 17209, 17247, 17216]);
-        return codes.get(key);
+        codes.set('14S', ['https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/8.png', 12047, 12266, 12261, 12252, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/INTERLOCKINGHEART/ANHMAU2.png']);
+        codes.set('14L', [12287, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/8.png', 12284, 12275, 12052, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/INTERLOCKINGHEART/ANHMAU4.png']);
+        codes.set('18S', ['https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/7.png', 12099, 12775, 12448, 12776, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/INTERLOCKINGHEART/ANHMAU6.png']);
+        codes.set('18L', [12106, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/7.png', 12609, 14153, 14132, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/INTERLOCKINGHEART/ANHMAU5.png']);
+        return codes;
     }
 
-    function getSquareAcrylicPlaque(key) {
+    function getAlluringBeautyCodesTeam2() {
         const codes = new Map();
-        codes.set('14S', [16539, 16975, 17208, 16986, 17032, 17207, 16983]);
-        codes.set('14L', [16542, 21083, 21081, 17009, 17008, 17001, 16987]);
-        return codes.get(key);
+        codes.set('14S', ['https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/2.png', 12196, 12214, 12197, 12209, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/AlluringBeauty/ANHMAU2.png']);
+        codes.set('14L', [12239, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/2.png', 12236, 12220, 12228, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/AlluringBeauty/ANHMAU1.png']);
+        codes.set('18S', ['https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/1.png', 12113, 12627, 12124, 12626, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/AlluringBeauty/ANHMAU3.png']);
+        codes.set('18L', ['https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/1.png', 12121, 12607, 12124, 12628, 12412]);
+        return codes;
     }
 
-    function getHeartAcrylicPlaque(key) {
+    function getLuckyInLoveCodesTeam2() {
         const codes = new Map();
-        codes.set('14S', [18701, 18705, 18703, 18704, 18707, 18711, 18712]);
-        codes.set('14L', [18706, 21091, 21090, 19390, 19389, 19387, 19388]);
-        return codes.get(key);
+        codes.set('14S', [17471, 13527, 9775, 9752, 9756, 9758]);
+        codes.set('14L', [17474, 13547, 9778, 9923, 9742, 9758]);
+        return codes;
     }
 
-    function getMensCrossBracelet(key) {
+    function getEternalHopeCodesTeam2() {
         const codes = new Map();
-        codes.set('14S', [19501, 19570, 19559, 19465, 19554, 19566, 19560]);
-        codes.set('14L', [19502, 19500, 19498, 19465, 19554, 19459, 19567]);
-        return codes.get(key);
+        codes.set('14S', [11104, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/9.png', 8707, 10061, 13888, 8718, 8689]);
+        codes.set('14L', [11105, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/9.png', 8727, 8729, 13887, 8730, 12641]);
+        return codes;
     }
 
-    function getCubanCrossNecklace(key) {
+    function getFaithCrossCodesTeam2() {
         const codes = new Map();
-        codes.set('14S', [11915, 16733, 12081, 12087, 12092, 16735, 16739]);
-        codes.set('14L', [11915, 12096, 16746, 12090, 12092, 16743, 16745]);
-        return codes.get(key);
+        codes.set('14S', [12570, 12572, 11348, 11347, 12569, 12573]);
+        codes.set('14L', [11354, 12577, 12579, 11357, 11356, 12578]);
+        return codes;
     }
 
-    function getCross1(key) {
+    //Duy nho
+    function getAnh1DuyNho() {
         const codes = new Map();
-        codes.set('14S', [3421, 2649, 2656, 2646, 14717, 2653, 2644]);
-        codes.set('14L', [3421, 3771, 2978, 14719, 2979, 9541, 14716]);
-        return codes.get(key);
+        codes.set('1', [12570, 12572, 11348, 11347, 12569, 12573]);
+        codes.set('2', [11354, 12577, 12579, 11357, 11356, 12578]);
+        return codes;
     }
 
-    function getCross2(key) {
+    function getAnhListingDuyNho() {
         const codes = new Map();
-        codes.set('14S', [5036, 4871, 4876, 8746, 14754, 8747, 4872]);
-        codes.set('14L', [5036, 4879, 8752, 4875, 8750, 8751, 14753]);
-        return codes.get(key);
+        codes.set('AB', [12237, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/2.png', 12235, 12222, 12219, 12043]);
+        codes.set('IH', [9202, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/8.png', 5545, 17197, 9233, 'https://hehehehsss.s3.us-east-2.amazonaws.com/product-background/common-image/INTERLOCKINGHEART/ANHMAU2.png']);
+        return codes;
     }
 
+    //Name Necklace
+    function getHeartNameNecklace() {
+        const codes = new Map();
+        codes.set('1', [17519, 17518, 17253, 16157, 16168, 16172]);
+        return codes;
+    }
+
+    function getNameNecklace() {
+        const codes = new Map();
+        codes.set('1', [17513, 17455, 15229, 15223, 15226, 15222]);
+        return codes;
+    }
+
+    function getVerticalNameNecklace() {
+        const codes = new Map();
+        codes.set('1', [16056, 17508, 16085, 16081, 16084, 16714]);
+        return codes;
+    }
+
+    function getSignatureNameNecklace() {
+        const codes = new Map();
+        codes.set('1', [17526, 17447, 17454, 15572, 16106, 16108]);
+        return codes;
+    }
+
+    function getAnh1NameNecklace() {
+        const codes = new Map();
+        codes.set('1', [16154, 14205, 16036, 15767]);
+        return codes;
+    }
+
+    //Anh 1 woman
+    function getAnh1Woman() {
+        const codes = new Map();
+        codes.set('1', [14978, 14980, 14988, 14989, 14973, 14972, 12046, 12045, 20476, 9747, 11350]);
+        return codes;
+    }
 
     function tempAlert(msg, duration) {
         const el = document.createElement("h3");
@@ -287,146 +410,120 @@
         document.body.appendChild(el);
     }
 
-    function getTikTokCodes(key) {
-        const codes = new Map();
-        codes.set('women-anh-1', [12044, 12018, 3565, 3566, 12053, 12034, 12046, 12045, 11350, 9747, 20476]);
-        codes.set('man-anh-1', [11915, 3421, 5036, 11570, 11645]);
-        return codes.get(key);
-    }
-
-    function downloadImages() {
+    async function downloadImages(idOfSelector, backGroundSrcUrlSelected) {
         tempAlert('Please wait!', 3000);
-        const backGroundSrcUrl = document.getElementById('background-src-url').value;
+        const backGroundSrcUrl = document.getElementById(backGroundSrcUrlSelected).value;
         if (backGroundSrcUrl === '') {
             return;
         }
-        let listTypeOfProduct = ['14S'];
-        const type = $('#types').find(":selected").val();
-
-        if (type === 'update-variation') {
-            listTypeOfProduct = ['14S', '14L', '18S', '18L'];
+        let codes;
+        switch ($('#' + idOfSelector).find(":selected").val()) {
+            case "alluring-beauty-team-1":
+                codes = this.getAlluringBeautyCodesTeam1();
+                break;
+            case "forever-love-team-1":
+                codes = this.getForeverLoveCodesTeam1();
+                break;
+            case "love-knot-team-1":
+                codes = this.getLoveKnotCodesTeam1();
+                break;
+            case "interlocking-hearts-team-1":
+                codes = this.getInterlockingHeartsCodesTeam1();
+                break;
+            case "lucky_in_love-team-1":
+                codes = this.getLuckyInLoveCodesTeam1();
+                break;
+            case "eternal_hope-team-1":
+                codes = this.getEternalHopeCodesTeam1();
+                break;
+            case "faith_cross-team-1":
+                codes = this.getFaithCrossCodesTeam1();
+                break;
+            case "alluring-beauty-team-2":
+                codes = this.getAlluringBeautyCodesTeam2();
+                break;
+            case "forever-love-team-2":
+                codes = this.getForeverLoveCodesTeam2();
+                break;
+            case "love-knot-team-2":
+                codes = this.getLoveKnotCodesTeam2();
+                break;
+            case "interlocking-hearts-team-2":
+                codes = this.getInterlockingHeartsCodesTeam2();
+                break;
+            case "lucky_in_love-team-2":
+                codes = this.getLuckyInLoveCodesTeam2();
+                break;
+            case "eternal_hope-team-2":
+                codes = this.getEternalHopeCodesTeam2();
+                break;
+            case "faith_cross-team-2":
+                codes = this.getFaithCrossCodesTeam2();
+                break;
+            case "anh-1-duy-nho":
+                codes = this.getAnh1DuyNho();
+                break;
+            case "anh-listing-duy-nho":
+                codes = this.getAnhListingDuyNho();
+                break;
+            case "heart-name-necklace":
+                codes = this.getHeartNameNecklace();
+                break;
+            case "name-necklace":
+                codes = this.getNameNecklace();
+                break;
+            case "vertical-name-necklace":
+                codes = this.getVerticalNameNecklace();
+                break;
+            case "signature-name-necklace":
+                codes = this.getSignatureNameNecklace();
+                break;
+            case "anh-1-name-necklace":
+                codes = this.getAnh1NameNecklace();
+                break;
+            case "anh-1-woman":
+                codes = this.getAnh1Woman();
+                break;
+            default:
+                codes = [];
         }
 
-        for (let j = 0; j < listTypeOfProduct.length; j++) {
-            let codes;
-            const productType = listTypeOfProduct[j];
-
-            let withReplacePosition2 = true;
-            switch ($('#products').find(":selected").val()) {
-                case "alluring-beauty":
-                    codes = this.getAlluringBeautyCodes(productType);
-                    break;
-                case "forever-love":
-                    codes = this.getForeverLoveCodes(productType);
-                    break;
-                case "love-knot":
-                    codes = this.getLoveKnotCodes(productType);
-                    break;
-                case "interlocking-hearts":
-                    codes = this.getInterlockingHeartsCodes(productType);
-                    break;
-                case "lucky_in_love":
-                    codes = this.getLuckyInLoveCodes(productType);
-                    break;
-                case "eternal_hope":
-                    codes = this.getEternalHopeCodes(productType);
-                    break;
-                case "faith_cross":
-                    codes = this.getFaithCrossCodes(productType);
-                    withReplacePosition2 = false;
-                    break;
-                case "cuban":
-                    codes = this.getCubanCodes(productType);
-                    withReplacePosition2 = false;
-                    break;
-                case "cross":
-                    codes = this.getCrossCodes(productType);
-                    withReplacePosition2 = false;
-                    break;
-                case "cross_bracelet":
-                    codes = this.getCrossBraceletCodes(productType);
-                    withReplacePosition2 = false;
-                    break;
-                case "square_acrylic_plaque":
-                    codes = this.getSquareAcrylicPlaque(productType);
-                    withReplacePosition2 = false;
-                    break;
-                case "heart_acrylic_plaque":
-                    codes = this.getHeartAcrylicPlaque(productType);
-                    withReplacePosition2 = false;
-                    break;
-                case "mens_cross_bracelet":
-                    codes = this.getMensCrossBracelet(productType);
-                    withReplacePosition2 = false;
-                    break;
-                case "cuban_cross_necklace":
-                    codes = this.getCubanCrossNecklace(productType);
-                    withReplacePosition2 = false;
-                    break;
-                case "cross_1":
-                    codes = this.getCross1(productType);
-                    withReplacePosition2 = false;
-                    break;
-                case "cross_2":
-                    codes = this.getCross2(productType);
-                    withReplacePosition2 = false;
-                    break;
-                default:
-                    codes = [];
-            }
-
-            if (codes === undefined) {
-                continue;
-            }
-
-            for (let i = 0; i < codes.length; i++) {
-                let url = shineOnUrl(codes[i]);
-                if (i === 1 && withReplacePosition2) {
-                    downloadImage(2, codes[1], productType)
-                    continue;
+        var count = 0;
+        for (const [key, value] of codes.entries()) {
+            for (const item of value) {
+                count++;
+                const countNumber = count;
+                if (typeof item === 'string') {
+                    downloadImage(countNumber, item, key)
+                } else {
+                    // Use await here to wait for the AJAX request to complete
+                    // await new Promise((resolve, reject) => {
+                        $.ajax({
+                            url: shineOnUrl(item),
+                            type: "POST",
+                            headers: {"Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiZDA2NmM4NmEwY2E5ZDM3ODAwZGE2MGFkNGZmNTJkOGM4NjE3ZWYwM2QxNzNjNTVkNTcwZTkxN2ZmM2I1N2E4YzZiNWZhOTUxNDBkNWQ2Y2UiLCJpYXQiOjE3MDk4MTIxODAsIm5iZiI6MTcwOTgxMjE4MCwiZXhwIjoxNzQxMzQ4MTgwLCJzdWIiOiIyMTExOTIiLCJzY29wZXMiOlsicmVhZF9zaG9wIiwicmVhZF9vcmRlcnMiLCJyZWFkX3Byb2R1Y3RfdGVtcGxhdGVzIiwicmVhZF90cmFuc2Zvcm1hdGlvbnMiLCJ3cml0ZV9hcnR3b3JrIiwid3JpdGVfc2t1cyIsIndyaXRlX29yZGVycyIsIndyaXRlX2NyZWRpdHMiXX0.e-wRZ6C7v8GsBxLpTLFEUX_M_Gv70c458I-Gnum4meKGtYnfw9UmoCAf2IuGdXDZG_j18sdbvoMBy8pARhMug71yml85zvS-tGAq12W5GhArPp_Jz2GWmSorKp46TjBwS5xQhlNaD6WpJRoSygW5xV4smAf7ANdBlmxepGiXRzpFldMARaqWJqxRUxNQ3rfDOg1iuE8zxm7i4ffjJldxHY6lXtjKMWhfHbv7NGHDhIleG6S9nhyySm-KEG4uS3OMlkyQf6lcgksRCBDamKK4ME89piiu2V5zVtKy3XwiriPLVuw3zOB5ZoBagAoc2XMxtlC3MUm8vGVdeIbdlWLOneDXKx7iQiuXBPBlRWpE0imoX3Ywm2MrzCukjuxhzLcXqvEH4dFemKFE08Ix3j6H-GoDdKEAcTw9f4eO3ok2k-GAB3oOTxoxpU2zy5NQSY-z6-KWNL2ck8bCwtVrd_e02gBe-2KJ8dbol6pcF22udfE6noaE-DaWhFoxrW4d4nEs0B2693cS9cGv37f5f9ygeVGj5Y0zuQSU3mYxu2Bc4S0jKuu96Zm7orkQV0EjQVBxEnNdAiLRagkm1Jt8qM2p6SiG6jcu0EbDuVqZvZ-N0N7Hzr3SZdKHlLd2fou3TVKjN224AvKC2egMDZsZv-j9z1fIhiomeGZMu6woJz0468M"},
+                            data: {
+                                "src": backGroundSrcUrl,
+                            },
+                            success: async function (response) {
+                                const responseUrl = response.render.make.src;
+                                downloadImage(countNumber, responseUrl, key);
+                                resolve();
+                            },
+                            error: function (error) {
+                                // ... (handle the error)
+                                reject();  // Reject the promise when the AJAX request fails
+                            }
+                        })
+                    // })
                 }
-                $.ajax({
-                    url: url,
-                    type: "POST",
-                    headers: {"Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiZDA2NmM4NmEwY2E5ZDM3ODAwZGE2MGFkNGZmNTJkOGM4NjE3ZWYwM2QxNzNjNTVkNTcwZTkxN2ZmM2I1N2E4YzZiNWZhOTUxNDBkNWQ2Y2UiLCJpYXQiOjE3MDk4MTIxODAsIm5iZiI6MTcwOTgxMjE4MCwiZXhwIjoxNzQxMzQ4MTgwLCJzdWIiOiIyMTExOTIiLCJzY29wZXMiOlsicmVhZF9zaG9wIiwicmVhZF9vcmRlcnMiLCJyZWFkX3Byb2R1Y3RfdGVtcGxhdGVzIiwicmVhZF90cmFuc2Zvcm1hdGlvbnMiLCJ3cml0ZV9hcnR3b3JrIiwid3JpdGVfc2t1cyIsIndyaXRlX29yZGVycyIsIndyaXRlX2NyZWRpdHMiXX0.e-wRZ6C7v8GsBxLpTLFEUX_M_Gv70c458I-Gnum4meKGtYnfw9UmoCAf2IuGdXDZG_j18sdbvoMBy8pARhMug71yml85zvS-tGAq12W5GhArPp_Jz2GWmSorKp46TjBwS5xQhlNaD6WpJRoSygW5xV4smAf7ANdBlmxepGiXRzpFldMARaqWJqxRUxNQ3rfDOg1iuE8zxm7i4ffjJldxHY6lXtjKMWhfHbv7NGHDhIleG6S9nhyySm-KEG4uS3OMlkyQf6lcgksRCBDamKK4ME89piiu2V5zVtKy3XwiriPLVuw3zOB5ZoBagAoc2XMxtlC3MUm8vGVdeIbdlWLOneDXKx7iQiuXBPBlRWpE0imoX3Ywm2MrzCukjuxhzLcXqvEH4dFemKFE08Ix3j6H-GoDdKEAcTw9f4eO3ok2k-GAB3oOTxoxpU2zy5NQSY-z6-KWNL2ck8bCwtVrd_e02gBe-2KJ8dbol6pcF22udfE6noaE-DaWhFoxrW4d4nEs0B2693cS9cGv37f5f9ygeVGj5Y0zuQSU3mYxu2Bc4S0jKuu96Zm7orkQV0EjQVBxEnNdAiLRagkm1Jt8qM2p6SiG6jcu0EbDuVqZvZ-N0N7Hzr3SZdKHlLd2fou3TVKjN224AvKC2egMDZsZv-j9z1fIhiomeGZMu6woJz0468M"},
-                    data: {
-                        "src": backGroundSrcUrl,
-                    },
-                    success: async function (response) {
-                        const responseUrl = response.render.make.src;
-                        await downloadImage(i + 1, responseUrl, productType);
-                    },
-                });
             }
         }
+
+        let audio = new Audio('complete-sound.mp3');
+        await audio.play();
     }
 
-    function downloadTiTokImages() {
-        tempAlert('Please wait!', 3000);
-        const backGroundSrcUrl = document.getElementById('tik-tok-background-src-url').value;
-        if (backGroundSrcUrl === '') {
-            return;
-        }
-        var codes;
-        var type = $('#tik-tok-products').find(":selected").val();
-        codes = this.getTikTokCodes(type);
-
-        for (let i = 0; i < codes.length; i++) {
-            $.ajax({
-                url: shineOnUrl(codes[i]),
-                type: "POST",
-                headers: {"Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiZDA2NmM4NmEwY2E5ZDM3ODAwZGE2MGFkNGZmNTJkOGM4NjE3ZWYwM2QxNzNjNTVkNTcwZTkxN2ZmM2I1N2E4YzZiNWZhOTUxNDBkNWQ2Y2UiLCJpYXQiOjE3MDk4MTIxODAsIm5iZiI6MTcwOTgxMjE4MCwiZXhwIjoxNzQxMzQ4MTgwLCJzdWIiOiIyMTExOTIiLCJzY29wZXMiOlsicmVhZF9zaG9wIiwicmVhZF9vcmRlcnMiLCJyZWFkX3Byb2R1Y3RfdGVtcGxhdGVzIiwicmVhZF90cmFuc2Zvcm1hdGlvbnMiLCJ3cml0ZV9hcnR3b3JrIiwid3JpdGVfc2t1cyIsIndyaXRlX29yZGVycyIsIndyaXRlX2NyZWRpdHMiXX0.e-wRZ6C7v8GsBxLpTLFEUX_M_Gv70c458I-Gnum4meKGtYnfw9UmoCAf2IuGdXDZG_j18sdbvoMBy8pARhMug71yml85zvS-tGAq12W5GhArPp_Jz2GWmSorKp46TjBwS5xQhlNaD6WpJRoSygW5xV4smAf7ANdBlmxepGiXRzpFldMARaqWJqxRUxNQ3rfDOg1iuE8zxm7i4ffjJldxHY6lXtjKMWhfHbv7NGHDhIleG6S9nhyySm-KEG4uS3OMlkyQf6lcgksRCBDamKK4ME89piiu2V5zVtKy3XwiriPLVuw3zOB5ZoBagAoc2XMxtlC3MUm8vGVdeIbdlWLOneDXKx7iQiuXBPBlRWpE0imoX3Ywm2MrzCukjuxhzLcXqvEH4dFemKFE08Ix3j6H-GoDdKEAcTw9f4eO3ok2k-GAB3oOTxoxpU2zy5NQSY-z6-KWNL2ck8bCwtVrd_e02gBe-2KJ8dbol6pcF22udfE6noaE-DaWhFoxrW4d4nEs0B2693cS9cGv37f5f9ygeVGj5Y0zuQSU3mYxu2Bc4S0jKuu96Zm7orkQV0EjQVBxEnNdAiLRagkm1Jt8qM2p6SiG6jcu0EbDuVqZvZ-N0N7Hzr3SZdKHlLd2fou3TVKjN224AvKC2egMDZsZv-j9z1fIhiomeGZMu6woJz0468M"},
-                data: {
-                    "src": backGroundSrcUrl,
-                },
-                success: async function (response) {
-                    const responseUrl = response.render.make.src;
-                    await downloadImageTikTok(i + 1, responseUrl);
-                },
-            });
-        }
-
-    }
 </script>
 </body>
 </html>
