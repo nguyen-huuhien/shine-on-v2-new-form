@@ -44,6 +44,9 @@
                                 <option value="faith_cross-team-1">Faith Cross</option>
                                 <option value="eternal_hope-team-1">Eternal Hope</option>
                                 <option value="lucky_in_love-team-1">Lucky In Love</option>
+                                <option value="cross-team-1">Cross</option>
+                                <option value="square_acrylic_plaque-team-1">Square Acrylic Plaque</option>
+                                <option value="heart_acrylic_plaque-team-1">Heart Acrylic Plaque</option>
                             </select>
                         </form>
                     </div>
@@ -289,6 +292,27 @@
         return codes;
     }
 
+    function getCrossCodesTeam1(key) {
+        const codes = new Map();
+        codes.set('14S', [11350, 12571, 11348, 11343, 11347, 12572, 12573]);
+        codes.set('14L', [11350, 11354, 12579, 11344, 11356, 11357, 12573]);
+        return codes.get(key);
+    }
+
+    function getSquareAcrylicPlaqueTeam1(key) {
+        const codes = new Map();
+        codes.set('14S', [16539, 16975, 17208, 16986, 17032, 17207, 16983]);
+        codes.set('14L', [16542, 21083, 21081, 17009, 17008, 17001, 16987]);
+        return codes.get(key);
+    }
+
+    function getHeartAcrylicPlaqueTeam1(key) {
+        const codes = new Map();
+        codes.set('14S', [18701, 18705, 18703, 18704, 18707, 18711, 18712]);
+        codes.set('14L', [18706, 21091, 21090, 19390, 19389, 19387, 19388]);
+        return codes.get(key);
+    }
+
     //Team 2 codes
     function getLoveKnotCodesTeam2() {
         const codes = new Map();
@@ -437,6 +461,15 @@
                 break;
             case "faith_cross-team-1":
                 codes = this.getFaithCrossCodesTeam1();
+                break;
+            case "cross-team-1":
+                codes = this.getCrossCodesTeam1();
+                break;
+            case "square_acrylic_plaque-team-1":
+                codes = this.getSquareAcrylicPlaqueTeam1();
+                break;
+            case "heart_acrylic_plaque-team-1":
+                codes = this.getHeartAcrylicPlaqueTeam1();
                 break;
             case "alluring-beauty-team-2":
                 codes = this.getAlluringBeautyCodesTeam2();
