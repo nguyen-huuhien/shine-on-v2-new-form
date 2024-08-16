@@ -45,6 +45,10 @@
                                 <option value="eternal_hope-team-1">Eternal Hope</option>
                                 <option value="lucky_in_love-team-1">Lucky In Love</option>
                                 <option value="cross-team-1">Cross</option>
+                                <option value="cuban-team-1">Cuban</option>
+                                <option value="cuban-cross-team-1">Cuban Cross</option>
+                                <option value="cross-bracelet-team-1">Cross Bracelet</option>
+                                <option value="man-cross-bracelet-team-1">Man Cross Bracelet</option>
                                 <option value="square_acrylic_plaque-team-1">Square Acrylic Plaque</option>
                                 <option value="heart_acrylic_plaque-team-1">Heart Acrylic Plaque</option>
                             </select>
@@ -193,6 +197,37 @@
                 </div>
             </div>
         </div>
+        <br>
+
+        <h2>Anh 1 Man</h2>
+        <div class="container-anh-1-man">
+            <div class="row">
+                <div class="col-3">
+                    <span>Product</span>
+                    <div class="input-group-prepend">
+                        <form>
+                            <select id="products-anh-1-man" name="products" class="form-select"
+                                    aria-label="Default select example">
+                                <option value="anh-1-man">Ảnh 1 Man</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <span>Link</span>
+                    <div class="input-group">
+                        <input type="text" id="background-src-url-anh-1-man" class="form-control">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-primary"
+                                    onclick="downloadImages('products-anh-1-man', 'background-src-url-anh-1-man')">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
     </div>
     <br>
     <br>
@@ -294,23 +329,53 @@
 
     function getCrossCodesTeam1(key) {
         const codes = new Map();
-        codes.set('14S', [11350, 12571, 11348, 11343, 11347, 12572, 12573]);
-        codes.set('14L', [11350, 11354, 12579, 11344, 11356, 11357, 12573]);
-        return codes.get(key);
+        codes.set('14S', [2652, 2656, 8679, 14717, 2648, 2653]);
+        codes.set('14L', [2975, 3057, 2646, 14716, 2974, 9541]);
+        return codes;
+    }
+
+    function getCubanCodesTeam1(key) {
+        const codes = new Map();
+        codes.set('14S', [11571, 11587, 11576, 11509, 11507, 11488]);
+        codes.set('14L', [11494, 11500, 17457, 13641, 11510, 11490]);
+        codes.set('18S', [11650, 11648, 11655, 13311, 11510, 11465]);
+        codes.set('18L', [11484, 11485, 11475, 11474, 11467, 11481]);
+        return codes;
+    }
+
+    function getCubanCrossCodesTeam1(key) {
+        const codes = new Map();
+        codes.set('14S', [16734, 12081, 12092, 16741, 16735, 16733]);
+        codes.set('14L', [12096, 16746, 16745, 12092, 12090, 16743]);
+        return codes;
+    }
+
+    function getCrossBraceletCodesTeam1(key) {
+        const codes = new Map();
+        codes.set('14S', [17451, 17212, 17190, 17221, 17245, 17241]);
+        codes.set('14L', [17450, 17449, 17211, 17209, 17247, 17216]);
+        return codes;
+    }
+
+    function getMensCrossBraceletTeam1(key) {
+        const codes = new Map();
+        codes.set('14S', [19570, 19559, 19465, 19554, 19566, 19560]);
+        codes.set('14L', [19500, 19498, 19465, 19554, 19459, 19567]);
+        return codes;
     }
 
     function getSquareAcrylicPlaqueTeam1(key) {
         const codes = new Map();
         codes.set('14S', [16539, 16975, 17208, 16986, 17032, 17207, 16983]);
         codes.set('14L', [16542, 21083, 21081, 17009, 17008, 17001, 16987]);
-        return codes.get(key);
+        return codes;
     }
 
     function getHeartAcrylicPlaqueTeam1(key) {
         const codes = new Map();
         codes.set('14S', [18701, 18705, 18703, 18704, 18707, 18711, 18712]);
         codes.set('14L', [18706, 21091, 21090, 19390, 19389, 19387, 19388]);
-        return codes.get(key);
+        return codes;
     }
 
     //Team 2 codes
@@ -423,6 +488,13 @@
         return codes;
     }
 
+    function getAnh1Man() {
+        const codes = new Map();
+        codes.set('1', [12082, 11570, 11645, 3421]);
+        return codes;
+    }
+
+
     function tempAlert(msg, duration) {
         const el = document.createElement("h3");
         el.setAttribute("style", "background-color:gray;text-align:center;");
@@ -464,6 +536,18 @@
                 break;
             case "cross-team-1":
                 codes = this.getCrossCodesTeam1();
+                break;
+            case "cuban-team-1":
+                codes = this.getCubanCodesTeam1();
+                break;
+            case "cuban-cross-team-1":
+                codes = this.getCubanCrossCodesTeam1();
+                break;
+            case "cross-bracelet-team-1":
+                codes = this.getCrossBraceletCodesTeam1();
+                break;
+            case "man-cross-bracelet-team-1":
+                codes = this.getMensCrossBraceletTeam1();
                 break;
             case "square_acrylic_plaque-team-1":
                 codes = this.getSquareAcrylicPlaqueTeam1();
@@ -515,6 +599,9 @@
                 break;
             case "anh-1-woman":
                 codes = this.getAnh1Woman();
+                break;
+            case "anh-1-man":
+                codes = this.getAnh1Man();
                 break;
             default:
                 codes = [];
