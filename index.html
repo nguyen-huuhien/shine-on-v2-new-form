@@ -228,6 +228,73 @@
             </div>
         </div>
         <br>
+        <br>
+        <br>
+
+        <h1>New Necklaces</h1>
+        <br>
+        <h2>New Necklaces</h2>
+        <div class="container-new-nl">
+            <div class="row">
+                <div class="col-3">
+                    <span>Product</span>
+                    <div class="input-group-prepend">
+                        <form>
+                            <select id="products-new-nl" name="products" class="form-select"
+                                    aria-label="Default select example">
+                                <option value="endless-love-new-nl">Endless Love</option>
+                                <option value="anchor-new-nl">Anchor</option>
+                                <option value="giraffes-new-nl">Giraffes</option>
+                                <option value="heart-to-heart-new-nl">Heart To Heart</option>
+                                <option value="perfect-pair-new-nl">Perfect Pair</option>
+                                <option value="stethoscope-new-nl">Stethoscope</option>
+                                <option value="dad-memorial-new-nl">Dad Memorial</option>
+                                <option value="mom-memorial-new-nl">Mom Memorial</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <span>Link</span>
+                    <div class="input-group">
+                        <input type="text" id="background-src-url-new-nl" class="form-control">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-primary"
+                                    onclick="downloadImages('products-new-nl', 'background-src-url-new-nl')">Submit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <h2>New Necklaces Anh 1</h2>
+        <div class="container-new-nl">
+            <div class="row">
+                <div class="col-3">
+                    <span>Product</span>
+                    <div class="input-group-prepend">
+                        <form>
+                            <select id="products-anh-1-new-nl" name="products" class="form-select"
+                                    aria-label="Default select example">
+                                <option value="anh-1-new-nl">Anh 1</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <span>Link</span>
+                    <div class="input-group">
+                        <input type="text" id="background-src-url-anh-1-new-nl" class="form-control">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-primary"
+                                    onclick="downloadImages('products-anh-1-new-nl', 'background-src-url-anh-1-new-nl')">Submit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <br>
     <br>
@@ -494,6 +561,79 @@
         return codes;
     }
 
+    //New Nl
+    function getEndlessLoveNewNl() {
+        const codes = new Map();
+        codes.set('14S', [2165, 2145, 22491, 2147, 2122, 1698]);
+        codes.set('14L', [5400, 5398, 22491, 5399, 5397, 1698]);
+        codes.set('18S', [2166, 2146, 1703, 2123, 2150, 11278]);
+        codes.set('18L', [5404, 5402, 1703, 5401, 5403, 11278]);
+        return codes;
+    }
+
+    function getAnchorNewNl() {
+        const codes = new Map();
+        codes.set('14S', [2374, 2375, 22493, 2376, 2378, 1707]);
+        codes.set('14L', [5615, 5612, 22493, 5611, 5613, 1707]);
+        codes.set('18S', [2383, 2384, 1767, 2386, 2387, 1718]);
+        codes.set('18L', [5620, 5617, 1767, 5616, 5618, 1718]);
+        return codes;
+    }
+
+    function getGiraffesNewNl() {
+        const codes = new Map();
+        codes.set('14S', [2775, 2770, 22489, 2767, 2772, 2764]);
+        codes.set('14L', [5381, 4985, 22489, 5380, 5381, 2764]);
+        codes.set('18S', [2780, 2766, 2638, 2782, 2781, 2765]);
+        codes.set('18L', [5384, 5382, 2638, 4986, 5384, 2765]);
+        return codes;
+    }
+
+    function getHearToHearNewNl() {
+        const codes = new Map();
+        codes.set('14S', [3232, 3231, 22488, 3230, 3229, 11315]);
+        codes.set('14L', [3480, 3479, 22488, 3478, 3475, 11316]);
+        return codes;
+    }
+
+    function getPerfectPairNewNl() {
+        const codes = new Map();
+        codes.set('14S', [11170, 15505, 22486, 15501, 15492, 14388]);
+        codes.set('14L', [11177, 11176, 22486, 11184, 15516, 14391]);
+        return codes;
+    }
+
+    function getStethoscopeNewNl() {
+        const codes = new Map();
+        codes.set('14S', [2499, 2496, 22492, 2432, 2420, 2465]);
+        codes.set('14L', [3063, 2969, 22492, 2970, 2971, 2465]);
+        return codes;
+    }
+
+    function getDadMemorialNewNl() {
+        const codes = new Map();
+        codes.set('14S', [8622, 2179, 2178, 22497, 2177, 2176, 2198]);
+        codes.set('14L', [8623, 5585, 5584, 22497, 5583, 5582, 2198]);
+        codes.set('18S', [8624, 2183, 2182, 2196, 2181, 2180, 2197]);
+        codes.set('18L', [8625, 5590, 5589, 2196, 5588, 5587, 2197]);
+        return codes;
+    }
+
+    function getMomMemorialNewNl() {
+        const codes = new Map();
+        codes.set('14S', [8640, 2185, 2187, 22498, 2186, 2184, 2193]);
+        codes.set('14L', [8641, 5568, 5567, 22498, 5566, 5565, 2193]);
+        codes.set('18S', [8642, 2189, 2191, 2194, 2190, 2188, 2195]);
+        codes.set('18L', [8643, 5572, 5571, 2195, 5570, 5569, 2194]);
+        return codes;
+    }
+
+    function getAnh1NewNl() {
+        const codes = new Map();
+        codes.set('1', [4996, 4997, 4743, 4744, 2768, 2783, 5031, 11111, 4776]);
+        return codes;
+    }
+
 
     function tempAlert(msg, duration) {
         const el = document.createElement("h3");
@@ -602,6 +742,33 @@
                 break;
             case "anh-1-man":
                 codes = this.getAnh1Man();
+                break;
+            case "endless-love-new-nl":
+                codes = this.getEndlessLoveNewNl();
+                break;
+            case "anchor-new-nl":
+                codes = this.getAnchorNewNl();
+                break;
+            case "giraffes-new-nl":
+                codes = this.getGiraffesNewNl();
+                break;
+            case "heart-to-heart-new-nl":
+                codes = this.getHearToHearNewNl();
+                break;
+            case "perfect-pair-new-nl":
+                codes = this.getPerfectPairNewNl();
+                break;
+            case "stethoscope-new-nl":
+                codes = this.getStethoscopeNewNl();
+                break;
+            case "dad-memorial-new-nl":
+                codes = this.getDadMemorialNewNl();
+                break;
+            case "mom-memorial-new-nl":
+                codes = this.getMomMemorialNewNl();
+                break;
+            case "anh-1-new-nl":
+                codes = this.getAnh1NewNl();
                 break;
             default:
                 codes = [];
