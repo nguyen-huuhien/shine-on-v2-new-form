@@ -51,6 +51,7 @@
                                 <option value="man-cross-bracelet-team-1">Man Cross Bracelet</option>
                                 <option value="square_acrylic_plaque-team-1">Square Acrylic Plaque</option>
                                 <option value="heart_acrylic_plaque-team-1">Heart Acrylic Plaque</option>
+                                <option value="dogtag-team-1">DOGTAG</option>
                             </select>
                         </form>
                     </div>
@@ -434,68 +435,22 @@
 
     function getSquareAcrylicPlaqueTeam1(key) {
         const codes = new Map();
-        codes.set('14S', [ 16951,
-            16952,
-            16953,
-            16954,
-            16955,
-            19490,
-            19491,
-            19492,
-            19493,
-            19494,
-            19495,
-            21080,
-            21100,
-            23936,
-            23710,
-            23697,
-            23698,
-            23699,
-            23700,
-            23701,
-            23702,
-            23703,
-            23704,
-            23705,
-            23706,
-            23707,
-            23708,
-            23709,
-            22446,
-            22447,
-            22448,
-            22449,
-            22450,
-            22451,
-            22452,
-            16950,
-            16949,
-            16948,
-            16947,
-            16946,
-            19482,
-            19484,
-            19483,
-            19485,
-            22580,
-            22584,
-            22585]);
-        codes.set('14L', [  23701 ]);
+        codes.set('14S', [16951, 23697, 23702, 19483, 22450, 22451, 22448]);
+        codes.set('14L', [19493, 19482, 22452, 22449, 23701, 23702, 19491]);
         return codes;
     }
 
     function getHeartAcrylicPlaqueTeam1(key) {
         const codes = new Map();
-        codes.set('14S', [  16939,
-            16937,
-            16938,
-            16940,
-            16941,
-            16942,
-            16943,
-            16944]);
-        codes.set('14L', [18706]);
+        codes.set('14S', [18701, 18705, 18703, 18704, 18707, 18711, 18712]);
+        codes.set('14L', [18706, 21091, 21090, 19390, 19389, 19387, 19388]);
+        return codes;
+    }
+
+    function getDogTagsTeam1(key) {
+        const codes = new Map();
+        codes.set('14S', [356, 8332, 14946, 17905, 14794, 14791, 421]);
+        codes.set('14L', [394, 8313, 14952, 17695, 14799, 14802, 427]);
         return codes;
     }
 
@@ -748,6 +703,9 @@
                 break;
             case "heart_acrylic_plaque-team-1":
                 codes = this.getHeartAcrylicPlaqueTeam1();
+                break;
+            case "dogtag-team-1":
+                codes = this.getDogTagsTeam1();
                 break;
             case "alluring-beauty-team-2":
                 codes = this.getAlluringBeautyCodesTeam2();
