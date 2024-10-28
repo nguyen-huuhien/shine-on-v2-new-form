@@ -297,6 +297,39 @@
                 </div>
             </div>
         </div>
+
+        <h1>Tik tok</h1>
+        <br>
+        <div class="container-new-nl">
+            <div class="row">
+                <div class="col-3">
+                    <span>Product</span>
+                    <div class="input-group-prepend">
+                        <form>
+                            <select id="products-tiktok" name="products" class="form-select"
+                                    aria-label="Default select example">
+                                <option value="love-knot-tiktok">Love Knot</option>
+                                <option value="forever-love-tiktok">Forever Love</option>
+                                <option value="alluring-beauty-tiktok">Alluring Beauty</option>
+                                <option value="interlocking-heart-tiktok">Interlocking Heart</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <span>Link</span>
+                    <div class="input-group">
+                        <input type="text" id="background-src-tiktok" class="form-control">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-primary"
+                                    onclick="downloadImages('products-tiktok', 'background-src-tiktok')">Submit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
     </div>
     <br>
     <br>
@@ -643,6 +676,29 @@
         return codes;
     }
 
+    function getLoveKnotTiktok() {
+        const codes = new Map();
+        codes.set('14S', [12061, 12024, 12044, 12018, 12135, 12134, 12660, 12671, 14163, 17967, 12386, 12388]);
+        return codes;
+    }
+
+    function getForeverLoveTiktok() {
+        const codes = new Map();
+        codes.set('14S', [9203, 9217, 10609, 10610, 2273, 19591, 8678, 13977, 1731, 13439, 13449, 9212]);
+        return codes;
+    }
+
+    function getAlluringBeautyTiktok() {
+        const codes = new Map();
+        codes.set('14S', [12058, 12037, 12053, 12034, 12215, 12237, 12212, 12056, 12127, 12112, 12607, 12413]);
+        return codes;
+    }
+
+    function getInterlockingHeartTiktok() {
+        const codes = new Map();
+        codes.set('14S', [12051, 12067, 12046, 12045, 12266, 12288, 12259, 12289, 12076, 12608, 12106, 12448]);
+        return codes;
+    }
 
     function tempAlert(msg, duration) {
         const el = document.createElement("h3");
@@ -781,6 +837,18 @@
                 break;
             case "anh-1-new-nl":
                 codes = this.getAnh1NewNl();
+                break;
+            case "love-knot-tiktok":
+                codes = this.getLoveKnotTiktok();
+                break;
+            case "forever-love-tiktok":
+                codes = this.getForeverLoveTiktok();
+                break;
+            case "alluring-beauty-tiktok":
+                codes = this.getAlluringBeautyTiktok();
+                break;
+            case "interlocking-heart-tiktok":
+                codes = this.getInterlockingHeartTiktok();
                 break;
             default:
                 codes = [];
