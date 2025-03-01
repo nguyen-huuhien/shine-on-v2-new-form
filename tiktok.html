@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShineOn tool</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+<div style="margin: 3% 10% 0 10%;">
+    <div>
+        <h1>
+            <span>TikTok</span>
+        </h1>
+    </div>
+    <br>
+    <br>
+    <div class="container">
+        <br>
+        <h1>WOMEN NECKLACE</h1>
+        <br>
+        <h3>Team 1</h3>
+        <div class="container-new-nl">
+            <div class="row">
+                <div class="col-3">
+                    <span>Product</span>
+                    <div class="input-group-prepend">
+                        <form>
+                            <select id="products-tiktok-WMT1" name="products" class="form-select"
+                                    aria-label="Default select example">
+                                <option value="love-knot-tiktok-wmt1">LoveKnot</option>
+                                <option value="forever-love-tiktok-wmt1">ForeverLove</option>
+                                <option value="alluring-beauty-tiktok-wmt1">AlluringBeauty</option>
+                                <option value="interlocking-heart-tiktok-wmt1">InterlockingHeart</option>
+                                <option value="eternal-hope-tiktok-wmt1">EternalHope</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <span>Link</span>
+                    <div class="input-group">
+                        <input type="text" id="background-src-tiktok-WMT1" class="form-control">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-primary"
+                                    onclick="downloadImages('products-tiktok-WMT1', 'background-src-tiktok-WMT1')">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <h3>Team 2</h3>
+        <div class="container-new-nl">
+            <div class="row">
+                <div class="col-3">
+                    <span>Product</span>
+                    <div class="input-group-prepend">
+                        <form>
+                            <select id="products-tiktok-WMT2" name="products" class="form-select"
+                                    aria-label="Default select example">
+                                <option value="love-knot-tiktok-wmt2">LoveKnot</option>
+                                <option value="forever-love-tiktok-wmt2">ForeverLove</option>
+                                <option value="alluring-beauty-tiktok-wmt2">AlluringBeauty</option>
+                                <option value="interlocking-heart-tiktok-wmt2">InterlockingHeart</option>
+                                <option value="eternal-hope-tiktok-wmt2">EternalHope</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <span>Link</span>
+                    <div class="input-group">
+                        <input type="text" id="background-src-tiktok-WMT2" class="form-control">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-primary"
+                                    onclick="downloadImages('products-tiktok-WMT2', 'background-src-tiktok-WMT2')">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <h1>MEN NECKLACE</h1>
+        <br>
+        <div class="container-new-nl">
+            <div class="row">
+                <div class="col-3">
+                    <span>Product</span>
+                    <div class="input-group-prepend">
+                        <form>
+                            <select id="products-tiktok-men" name="products" class="form-select"
+                                    aria-label="Default select example">
+                                <option value="cross-men">Cross</option>
+                                <option value="cuban-men">Cuban</option>
+                                <option value="cuban-cross-men">Cuban Cross</option>
+                                <option value="love-you-forever-bracelet-men">Love You Forever Bracelet</option>
+                                <option value="cross-bracelet-men">Cross Bracelet</option>
+                            </select>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <span>Link</span>
+                    <div class="input-group">
+                        <input type="text" id="background-src-tiktok-men" class="form-control">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-primary"
+                                    onclick="downloadImages('products-tiktok-men', 'background-src-tiktok-men')">
+                                Submit
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+    <br>
+    <br>
+</div>
+<br>
+<script src="jquery-3.6.4.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+<script>
+    function shineOnUrl(code) {
+        const url = 'https://api.shineon.com/v1/renders/' + code + '/make';
+        return url;
+    }
+
+    function makeid(length) {
+        let result = '';
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        const charactersLength = characters.length;
+        let counter = 0;
+        while (counter < length) {
+            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+            counter += 1;
+        }
+        return result;
+    }
+
+
+    async function downloadImage(index, imageSrc, productType) {
+        const image = await fetch(imageSrc)
+        const imageBlog = await image.blob()
+        const imageURL = URL.createObjectURL(imageBlog)
+
+        const link = document.createElement('a')
+        link.href = imageURL
+        document.body.appendChild(link)
+        link.download = index + '-' + productType + '-' + makeid(8)
+        link.click()
+        document.body.removeChild(link)
+    }
+
+    function getLoveKnotTiktokWMT1() {
+        const codes = new Map();
+        codes.set('14S', [12044, 12018, 12061, 12024, 12135, 12175, 12176, 13330, 14171, 12020, 12381, 12072]);
+        return codes;
+    }
+
+    function getForeverLoveTiktokWMT1() {
+        const codes = new Map();
+        codes.set('14S', [3565, 3566, 9203, 9217, 19749, 1719, 13439, 1723, 2273, 1733, 13449, 13335]);
+        return codes;
+    }
+
+    function getAlluringBeautyTiktokWMT1() {
+        const codes = new Map();
+        codes.set('14S', [12053, 12034, 12058, 12037, 12211, 12121, 12230, 12722, 12043, 12112, 12123, 12413]);
+        return codes;
+    }
+
+    function getInterlockingHeartTiktokWMT1() {
+        const codes = new Map();
+        codes.set('14S', [12045, 12051, 12067, 12266, 12286, 12287, 12268, 14144, 13326, 12609, 14148]);
+        return codes;
+    }
+
+    function getEternalHopeTiktokWMT1() {
+        const codes = new Map();
+        codes.set('14S', [11104, 15456, 8717, 8730, 13887, 8689, 8686, 8729, 12641, 13892]);
+        return codes;
+    }
+
+    function getLoveKnotTiktokWMT2() {
+        const codes = new Map();
+        codes.set('14S', [12044, 12018, 15023, 15018, 19787, 12171, 12134, 12146, 12133, 17964, 12610, 12388]);
+        return codes;
+    }
+
+    function getForeverLoveTiktokWMT2() {
+        const codes = new Map();
+        codes.set('14S', [3565, 3566, 16978, 16995, 2278, 9202, 9234, 1724, 1726, 5240, 5621, 13447]);
+        return codes;
+    }
+
+    function getAlluringBeautyTiktokWMT2() {
+        const codes = new Map();
+        codes.set('14S', [12053, 12034, 14854, 14861, 12215, 12235, 12237, 13301, 13901, 12606, 12122, 12124]);
+        return codes;
+    }
+
+    function getInterlockingHeartTiktokWMT2() {
+        const codes = new Map();
+        codes.set('14S', [12045, 15271, 12070, 12260, 12288, 12262, 14122, 14136, 12106, 12608, 12448]);
+        return codes;
+    }
+
+    function getEternalHopeTiktokWMT2() {
+        const codes = new Map();
+        codes.set('14S', [11104, 15456, 13888, 8727, 13941, 12643, 12639, 8726, 8688, 10068]);
+        return codes;
+    }
+
+    function getCrossMen() {
+        const codes = new Map();
+        codes.set('14S', [3421, 4733, 2656, 2975, 2974, 14717, 14716, 2648, 2640, 9541]);
+        return codes;
+    }
+
+    function getCubanMen() {
+        const codes = new Map();
+        codes.set('14S', [11555, 11554, 11511, 11486, 11571, 11494, 17457, 11501, 11492, 11648, 11475, 11677]);
+        return codes;
+    }
+
+    function getCubanCrossMen() {
+        const codes = new Map();
+        codes.set('14S', [11915, 11914, 11931, 11913, 16742, 11932, 11927, 16740, 16732, 11909]);
+        return codes;
+    }
+
+    function getLoveYouForeverBraceletMen() {
+        const codes = new Map();
+        codes.set('14S', [17960, 17961, 17212, 17211, 17449, 17189, 17221, 17239, 17246, 17213]);
+        return codes;
+    }
+
+    function getCrossBraceletMen() {
+        const codes = new Map();
+        codes.set('14S', [19501, 19502, 19570, 19500, 19456, 19554, 19465, 19460, 19561, 19498]);
+        return codes;
+    }
+
+    function tempAlert(msg, duration) {
+        const el = document.createElement("h3");
+        el.setAttribute("style", "background-color:gray;text-align:center;");
+        el.innerHTML = msg;
+        setTimeout(function () {
+            el.parentNode.removeChild(el);
+        }, duration);
+        document.body.appendChild(el);
+    }
+
+    async function downloadImages(idOfSelector, backGroundSrcUrlSelected) {
+        tempAlert('Please wait!', 3000);
+        const backGroundSrcUrl = document.getElementById(backGroundSrcUrlSelected).value;
+        if (backGroundSrcUrl === '') {
+            return;
+        }
+        let codes;
+        switch ($('#' + idOfSelector).find(":selected").val()) {
+            case "love-knot-tiktok-wmt1":
+                codes = this.getLoveKnotTiktokWMT1();
+                break;
+            case "forever-love-tiktok-wmt1":
+                codes = this.getForeverLoveTiktokWMT1();
+                break;
+            case "alluring-beauty-tiktok-wmt1":
+                codes = this.getAlluringBeautyTiktokWMT1();
+                break;
+            case "interlocking-heart-tiktok-wmt1":
+                codes = this.getInterlockingHeartTiktokWMT1();
+                break;
+            case "eternal-hope-tiktok-wmt1":
+                codes = this.getEternalHopeTiktokWMT1();
+                break;
+            case "love-knot-tiktok-wmt2":
+                codes = this.getLoveKnotTiktokWMT2();
+                break;
+            case "forever-love-tiktok-wmt2":
+                codes = this.getForeverLoveTiktokWMT2();
+                break;
+            case "alluring-beauty-tiktok-wmt2":
+                codes = this.getAlluringBeautyTiktokWMT2();
+                break;
+            case "interlocking-heart-tiktok-wmt2":
+                codes = this.getInterlockingHeartTiktokWMT2();
+                break;
+            case "eternal-hope-tiktok-wmt2":
+                codes = this.getEternalHopeTiktokWMT2();
+                break;
+            case"cross-men":
+                codes = this.getCrossMen();
+                break;
+            case "cuban-men":
+                codes = this.getCubanMen();
+                break;
+            case "cuban-cross-men":
+                codes = this.getCubanCrossMen();
+                break;
+            case "love-you-forever-bracelet-men":
+                codes = this.getLoveYouForeverBraceletMen();
+                break;
+            case "cross-bracelet-men":
+                codes = this.getCrossBraceletMen();
+                break;
+            default:
+                codes = [];
+        }
+
+        var count = 0;
+        for (const [key, value] of codes.entries()) {
+            for (const item of value) {
+                count++;
+                const countNumber = count;
+                if (typeof item === 'string') {
+                    downloadImage(countNumber, item, key)
+                } else {
+                    // Use await here to wait for the AJAX request to complete
+                    // await new Promise((resolve, reject) => {
+                    $.ajax({
+                        url: shineOnUrl(item),
+                        type: "POST",
+                        headers: {"Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzIiwianRpIjoiZDA2NmM4NmEwY2E5ZDM3ODAwZGE2MGFkNGZmNTJkOGM4NjE3ZWYwM2QxNzNjNTVkNTcwZTkxN2ZmM2I1N2E4YzZiNWZhOTUxNDBkNWQ2Y2UiLCJpYXQiOjE3MDk4MTIxODAsIm5iZiI6MTcwOTgxMjE4MCwiZXhwIjoxNzQxMzQ4MTgwLCJzdWIiOiIyMTExOTIiLCJzY29wZXMiOlsicmVhZF9zaG9wIiwicmVhZF9vcmRlcnMiLCJyZWFkX3Byb2R1Y3RfdGVtcGxhdGVzIiwicmVhZF90cmFuc2Zvcm1hdGlvbnMiLCJ3cml0ZV9hcnR3b3JrIiwid3JpdGVfc2t1cyIsIndyaXRlX29yZGVycyIsIndyaXRlX2NyZWRpdHMiXX0.e-wRZ6C7v8GsBxLpTLFEUX_M_Gv70c458I-Gnum4meKGtYnfw9UmoCAf2IuGdXDZG_j18sdbvoMBy8pARhMug71yml85zvS-tGAq12W5GhArPp_Jz2GWmSorKp46TjBwS5xQhlNaD6WpJRoSygW5xV4smAf7ANdBlmxepGiXRzpFldMARaqWJqxRUxNQ3rfDOg1iuE8zxm7i4ffjJldxHY6lXtjKMWhfHbv7NGHDhIleG6S9nhyySm-KEG4uS3OMlkyQf6lcgksRCBDamKK4ME89piiu2V5zVtKy3XwiriPLVuw3zOB5ZoBagAoc2XMxtlC3MUm8vGVdeIbdlWLOneDXKx7iQiuXBPBlRWpE0imoX3Ywm2MrzCukjuxhzLcXqvEH4dFemKFE08Ix3j6H-GoDdKEAcTw9f4eO3ok2k-GAB3oOTxoxpU2zy5NQSY-z6-KWNL2ck8bCwtVrd_e02gBe-2KJ8dbol6pcF22udfE6noaE-DaWhFoxrW4d4nEs0B2693cS9cGv37f5f9ygeVGj5Y0zuQSU3mYxu2Bc4S0jKuu96Zm7orkQV0EjQVBxEnNdAiLRagkm1Jt8qM2p6SiG6jcu0EbDuVqZvZ-N0N7Hzr3SZdKHlLd2fou3TVKjN224AvKC2egMDZsZv-j9z1fIhiomeGZMu6woJz0468M"},
+                        data: {
+                            "src": backGroundSrcUrl,
+                        },
+                        success: async function (response) {
+                            const responseUrl = response.render.make.src;
+                            downloadImage(countNumber, responseUrl, key);
+                            resolve();
+                        },
+                        error: function (error) {
+                            // ... (handle the error)
+                            reject();  // Reject the promise when the AJAX request fails
+                        }
+                    })
+                    // })
+                }
+            }
+        }
+
+        let audio = new Audio('complete-sound.mp3');
+        await audio.play();
+    }
+
+</script>
+</body>
+</html>
